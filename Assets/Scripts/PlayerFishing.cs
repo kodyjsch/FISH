@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerFishing : MonoBehaviour
 {
-    public Rigidbody bobber;
+    public Rigidbody rb;
     public float speed = 4;
 
     private bool casted = false;
+    private GameObject bobber;
+    private FishReturn fishReturn;
 
     private void Update()
     {
@@ -16,10 +18,15 @@ public class PlayerFishing : MonoBehaviour
             if(casted == false)
             {
                 casted = true;
-                Rigidbody cast = Instantiate(bobber, transform.position, transform.rotation);
+                Rigidbody cast = Instantiate(rb, transform.position, transform.rotation);
                 cast.velocity = transform.forward * speed;
+                bobber = GameObject.FindWithTag("bobber");
+                fishReturn = bobber.GetComponent<FishReturn>();
                 
-            }      
+            } else if (casted == true)
+            {
+                fishReturn.LineReturn();
+            }    
         }
 
     }
