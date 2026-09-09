@@ -10,15 +10,25 @@ public class FishReturn : MonoBehaviour
 
     private bool ret = false;
 
+    private FishList list;
+
+    public int chosenFish;
+
     private void Awake()
     {
         pole = GameObject.FindWithTag("pole");
         rb = GetComponent<Rigidbody>();
+
+        list = GameObject.FindWithTag("list").GetComponent<FishList>();
+
+        chosenFish = Random.Range(0, list.fishPrefabs.Count);
     }
     public void LineReturn()
     {
         Debug.Log("returned!");
         ret = true;
+
+        GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
 
     }
 
