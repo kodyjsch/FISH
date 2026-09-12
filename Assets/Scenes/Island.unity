@@ -155,9 +155,12 @@ MonoBehaviour:
   - {fileID: 4530833298855469870, guid: d96c1951644df674999b4604176df6ad, type: 3}
   splashSprites:
   - {fileID: 21300000, guid: 1bf7bcc0b0dc6244ba90718c0e5822e1, type: 3}
+  counterSprites: []
   firstCatch: 00
+  Names:
+  - Blobfish
   OneLiners:
-  - Zingy one-liner here!
+  - This deep-sea fish is exploding with excitement!
 --- !u!4 &291893637
 Transform:
   m_ObjectHideFlags: 0
@@ -401,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &721355763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6698789642852579132, guid: 9bad3dd2a129b064eb140bf5516d2800, type: 3}
-  speed: 10
+  speed: 15
 --- !u!1 &1216686387
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +858,7 @@ Transform:
   m_GameObject: {fileID: 1216686387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.115}
+  m_LocalPosition: {x: 0, y: 0, z: 0.062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -894,6 +897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687979a9ba7a8b94b8be62c068dd39d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SplashSprite: {fileID: 1448589503}
+  Name: {fileID: 1189005177}
+  Zinger: {fileID: 1886779851}
+  screen: {fileID: 721355762}
 --- !u!1 &1243640604
 GameObject:
   m_ObjectHideFlags: 0
