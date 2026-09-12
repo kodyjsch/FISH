@@ -7,7 +7,7 @@ public class PlayerFishing : MonoBehaviour
     public Rigidbody rb;
     public float speed = 4;
 
-    private bool casted = false;
+    public bool casted = false;
     private GameObject bobber;
     private FishReturn fishReturn;
 
@@ -25,7 +25,10 @@ public class PlayerFishing : MonoBehaviour
                 
             } else if (casted == true)
             {
-                fishReturn.LineReturn();
+                if(fishReturn != null)
+                {
+                    fishReturn.LineReturn();
+                }
             }    
         }
 

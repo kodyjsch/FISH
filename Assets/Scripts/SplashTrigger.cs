@@ -8,23 +8,39 @@ public class SplashTrigger : MonoBehaviour
 {
     private FishReturn fRet;
     private FishList fList;
+    private PlayerFishing plFish;
 
     public Image SplashSprite;
     public TextMeshProUGUI Name;
     public TextMeshProUGUI Zinger;
 
     public GameObject screen;
+    private bool destroy = false;
 
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
+        plFish = GameObject.Find("Caster").GetComponent<PlayerFishing>();
+    }
+
+    private void Update()
+    {
+        
+        if (Input.GetMouseButtonDown(0) && screen.activeInHierarchy)
+        {
+            screen.SetActive(false);
+            plFish.casted = false;
+            destroy = false;
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("bobber"))
+        if (other.CompareTag("fish") && destroy == false)
         {
-            fRet = other.GetComponent<FishReturn>();
+            destroy = true;
+            fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
 
             if (fList.firstCatch[fRet.chosenFish] == false)
             {
@@ -33,7 +49,22 @@ public class SplashTrigger : MonoBehaviour
                 Name.text = fList.Names[fRet.chosenFish];
                 Zinger.text = fList.OneLiners[fRet.chosenFish];
                 screen.SetActive(true);
-            }            
+                GameObject bob = GameObject.FindWithTag("bobber");
+                Destroy(bob);
+
+            } else if (fList.firstCatch[fRet.chosenFish] == true)
+            {
+                StartCoroutine(killFish());
+            }           
         }
+    }
+
+    IEnumerator killFish()
+    {
+        yield return new WaitForSeconds(2.5f);
+        GameObject bob = GameObject.FindWithTag("bobber");
+        Destroy(bob);
+        plFish.casted = false;
+        destroy = false;
     }
 }
