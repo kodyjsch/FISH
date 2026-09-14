@@ -27,13 +27,25 @@ public class PlayerFishing : MonoBehaviour
             {
                 if(fishReturn != null)
                 {
-                    fishReturn.LineReturn();
+                    if(fishReturn.fish == true)
+                    {
+                        fishReturn.LineReturn();
+                    } else if (fishReturn.fish == false)
+                    {
+                        fishReturn.ret = true;
+                        Invoke(nameof(DestroyBob), 3.0f);
+                    }
+                                        
                 }
             }    
         }
 
     }
 
-    
+    void DestroyBob()
+    {
+        Destroy(bobber);
+        casted = false;
+    }
 
 }

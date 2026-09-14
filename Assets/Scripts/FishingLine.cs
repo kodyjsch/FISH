@@ -17,8 +17,8 @@ public class FishingLine : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2; // Set the line to have two points
 
-        lineRenderer.startWidth = 0.0075f;
-        lineRenderer.endWidth = 0.01f;
+        lineRenderer.startWidth = 0.01f;
+        lineRenderer.endWidth = 0.02f;
     }
 
     void Update()

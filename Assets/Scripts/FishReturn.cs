@@ -8,7 +8,8 @@ public class FishReturn : MonoBehaviour
     private Rigidbody rb;
     public float speed = 10;
 
-    private bool ret = false;
+    public bool ret = false;
+    public bool fish = false;
 
     private FishList list;
 
@@ -22,6 +23,8 @@ public class FishReturn : MonoBehaviour
         list = GameObject.FindWithTag("list").GetComponent<FishList>();
 
         chosenFish = Random.Range(0, list.fishPrefabs.Count);
+
+        StartCoroutine(catchFish());
     }
     public void LineReturn()
     {
@@ -40,5 +43,13 @@ public class FishReturn : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, pole.transform.position, step);
         }
+
+        Debug.Log(fish);
+    }
+
+    IEnumerator catchFish()
+    {
+        yield return new WaitForSeconds((Random.Range(3, 16)));
+        fish = true;
     }
 }
