@@ -15,7 +15,8 @@ public class FishReturn : MonoBehaviour
 
     public int chosenFish;
 
-    public ParticleSystem bubble;
+    public GameObject bubble;
+    private GameObject instance;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class FishReturn : MonoBehaviour
         yield return new WaitForSeconds((Random.Range(3, 16)));
         fish = true;
 
-        ParticleSystem instance = Instantiate(bubble, transform.position, Quaternion.identity);
+        instance = Instantiate(bubble, transform.position, Quaternion.identity);
     }
     public void LineReturn()
     {
@@ -50,6 +51,10 @@ public class FishReturn : MonoBehaviour
     {
         if(ret == true)
         {
+            if(instance != null)
+            {
+                Destroy(instance);
+            }            
 
             float step = speed * Time.deltaTime;
 

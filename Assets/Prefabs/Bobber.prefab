@@ -146,7 +146,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &9025774662070873004
 BoxCollider:
@@ -302,4 +302,4 @@ MonoBehaviour:
   ret: 0
   fish: 0
   chosenFish: 0
-  bubble: {fileID: 6661736134001148583, guid: 5530ca7a98e06d64cbd958913deae78e, type: 3}
+  bubble: {fileID: 7419847244147993030, guid: f1a89996896b5a64e930b57ab9e56965, type: 3}
