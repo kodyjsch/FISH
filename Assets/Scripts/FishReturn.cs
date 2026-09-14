@@ -15,6 +15,8 @@ public class FishReturn : MonoBehaviour
 
     public int chosenFish;
 
+    public ParticleSystem bubble;
+
     private void Awake()
     {
         pole = GameObject.FindWithTag("pole");
@@ -26,12 +28,21 @@ public class FishReturn : MonoBehaviour
 
         StartCoroutine(catchFish());
     }
+
+    IEnumerator catchFish()
+    {
+        yield return new WaitForSeconds((Random.Range(3, 16)));
+        fish = true;
+
+        ParticleSystem instance = Instantiate(bubble, transform.position, Quaternion.identity);
+    }
     public void LineReturn()
     {
         Debug.Log("returned!");
         ret = true;
 
         GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
+        
 
     }
 
@@ -39,6 +50,7 @@ public class FishReturn : MonoBehaviour
     {
         if(ret == true)
         {
+
             float step = speed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, pole.transform.position, step);
@@ -47,9 +59,5 @@ public class FishReturn : MonoBehaviour
         Debug.Log(fish);
     }
 
-    IEnumerator catchFish()
-    {
-        yield return new WaitForSeconds((Random.Range(3, 16)));
-        fish = true;
-    }
+    
 }

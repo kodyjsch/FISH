@@ -9,6 +9,7 @@ TagManager:
   - pole
   - list
   - fish
+  - bubble
   layers:
   - Default
   - TransparentFX
