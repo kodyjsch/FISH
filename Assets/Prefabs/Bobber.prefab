@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 8875642332604133991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -303,3 +303,4 @@ MonoBehaviour:
   fish: 0
   chosenFish: 0
   bubble: {fileID: 7419847244147993030, guid: f1a89996896b5a64e930b57ab9e56965, type: 3}
+  QTESys: {fileID: 2865849197200425273, guid: 3dc48277aa4902742b35f889ef547ac0, type: 3}

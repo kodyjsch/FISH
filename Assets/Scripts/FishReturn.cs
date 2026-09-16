@@ -18,6 +18,8 @@ public class FishReturn : MonoBehaviour
     public GameObject bubble;
     private GameObject instance;
 
+    public GameObject QTESys;
+
     private void Awake()
     {
         pole = GameObject.FindWithTag("pole");
@@ -47,6 +49,11 @@ public class FishReturn : MonoBehaviour
 
     }
 
+    public void QTESpawn()
+    {
+        Instantiate(QTESys, transform.position, Quaternion.identity);
+    }
+
     private void FixedUpdate()
     {
         if(ret == true)
@@ -59,9 +66,11 @@ public class FishReturn : MonoBehaviour
             float step = speed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, pole.transform.position, step);
+
+           
         }
 
-        Debug.Log(fish);
+        
     }
 
     

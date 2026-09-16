@@ -6,8 +6,9 @@ public class PlayerFishing : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = 4;
-
+    public bool QTE = false;
     public bool casted = false;
+    public bool failed = false;
     private GameObject bobber;
     private FishReturn fishReturn;
 
@@ -27,9 +28,11 @@ public class PlayerFishing : MonoBehaviour
             {
                 if(fishReturn != null)
                 {
-                    if(fishReturn.fish == true)
+                    if(fishReturn.fish == true && QTE == false)
                     {
-                        fishReturn.LineReturn();
+                       QTE = true;
+                       fishReturn.QTESpawn();
+
                     } else if (fishReturn.fish == false)
                     {
                         fishReturn.ret = true;
@@ -40,12 +43,20 @@ public class PlayerFishing : MonoBehaviour
             }    
         }
 
+        if(failed == true)
+        {
+            Invoke(nameof(DestroyBob), 3.0f);
+        }
+
     }
 
     void DestroyBob()
     {
         Destroy(bobber);
+        failed = false;
         casted = false;
     }
+
+
 
 }
