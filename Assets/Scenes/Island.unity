@@ -154,17 +154,25 @@ MonoBehaviour:
   fishPrefabs:
   - {fileID: 4530833298855469870, guid: d96c1951644df674999b4604176df6ad, type: 3}
   - {fileID: 2521616948744284423, guid: de954732ff42f164ebc0b2ecdcba1bd4, type: 3}
+  - {fileID: 1927676911963394388, guid: 9940893955a64824f998e3b2cc9f8df3, type: 3}
+  - {fileID: 5484971696527402859, guid: ac5fcc9409ddaab4da2c577936dc428c, type: 3}
   splashSprites:
   - {fileID: 21300000, guid: 1bf7bcc0b0dc6244ba90718c0e5822e1, type: 3}
   - {fileID: 21300000, guid: 89a49a79bdba3db40a5f0688f4787ba4, type: 3}
+  - {fileID: 21300000, guid: b4a2bc328aec388458b0a610806a8a6e, type: 3}
+  - {fileID: 21300000, guid: 976c33c7cb80e0643adb8d9d7486ad1b, type: 3}
   counterSprites: []
-  firstCatch: 0000
+  firstCatch: 00000000
   Names:
   - Blobfish
   - Scaly Pothos
+  - Bass
+  - Tully Jr.
   OneLiners:
   - This deep-sea fish is exploding with excitement!
   - Oh no! You found me!
+  - It's pronounced "bass".
+  - Please, Tulli Monstrum was my father. Call me Tully.
 --- !u!4 &291893637
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,6 +1207,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886779849}
   m_CullTransparentMesh: 1
+--- !u!1001 &370888513117984872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7425731800006213206, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875642332604133991, guid: 9bad3dd2a129b064eb140bf5516d2800,
+        type: 3}
+      propertyPath: m_Name
+      value: Bobber
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bad3dd2a129b064eb140bf5516d2800, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1210,3 +1286,4 @@ SceneRoots:
   - {fileID: 1596427140}
   - {fileID: 1243640607}
   - {fileID: 721355766}
+  - {fileID: 370888513117984872}

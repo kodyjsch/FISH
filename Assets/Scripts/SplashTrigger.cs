@@ -29,8 +29,8 @@ public class SplashTrigger : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && screen.activeInHierarchy)
         {
             screen.SetActive(false);
-            plFish.casted = false;
             destroy = false;
+            StartCoroutine(Cast());
 
         }
     }
@@ -66,5 +66,11 @@ public class SplashTrigger : MonoBehaviour
         Destroy(bob);
         plFish.casted = false;
         destroy = false;
+    }
+
+    IEnumerator Cast()
+    {
+        yield return null;
+        plFish.casted = false;
     }
 }

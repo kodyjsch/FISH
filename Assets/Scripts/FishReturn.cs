@@ -41,7 +41,6 @@ public class FishReturn : MonoBehaviour
     }
     public void LineReturn()
     {
-        Debug.Log("returned!");
         ret = true;
 
         GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);

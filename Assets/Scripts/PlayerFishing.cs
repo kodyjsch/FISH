@@ -14,6 +14,8 @@ public class PlayerFishing : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(casted);
+
         if (Input.GetMouseButtonDown(0)) 
         {
             if(casted == false)
@@ -36,7 +38,7 @@ public class PlayerFishing : MonoBehaviour
                     } else if (fishReturn.fish == false)
                     {
                         fishReturn.ret = true;
-                        Invoke(nameof(DestroyBob), 3.0f);
+                        StartCoroutine(DestroyBob());
                     }
                                         
                 }
@@ -45,16 +47,20 @@ public class PlayerFishing : MonoBehaviour
 
         if(failed == true)
         {
-            Invoke(nameof(DestroyBob), 3.0f);
+            StartCoroutine(DestroyBob());
         }
 
     }
 
-    void DestroyBob()
+    IEnumerator DestroyBob()
     {
+
+        yield return new WaitForSeconds(1.5f);
+        
         Destroy(bobber);
-        failed = false;
         casted = false;
+        failed = false;
+
     }
 
 
