@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3234218304884792640}
   - component: {fileID: 1339384379658872017}
   - component: {fileID: -6833766311074387817}
+  - component: {fileID: 9106424095385424938}
   m_Layer: 0
   m_Name: QTE Canvas
   m_TagString: QTE
@@ -148,3 +149,15 @@ MonoBehaviour:
   fail: 0
   QTENum: 0
   QTETurn: 0
+--- !u!114 &9106424095385424938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865849197200425273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843a9b7da4300344e93d7f2787dd8c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

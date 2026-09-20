@@ -31,7 +31,7 @@ public class QTESys : MonoBehaviour
 
         num = Random.Range(1, 4);
 
-        for(int i = 0; i < num; i++)
+        for (int i = 0; i < num; i++)
         {
             GameObject newObj = Instantiate(QTEText, transform);
             newObj.tag = tagList[i];
@@ -70,7 +70,6 @@ public class QTESys : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         fR.LineReturn();
-        pF.QTE = false;
         Destroy(gameObject);
     }
 

@@ -14,10 +14,10 @@ public class PlayerFishing : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(casted);
 
         if (Input.GetMouseButtonDown(0)) 
         {
+
             if(casted == false)
             {
                 casted = true;
@@ -28,8 +28,10 @@ public class PlayerFishing : MonoBehaviour
                 
             } else if (casted == true)
             {
-                if(fishReturn != null)
+
+                if (fishReturn != null)
                 {
+
                     if(fishReturn.fish == true && QTE == false)
                     {
                        QTE = true;
@@ -55,9 +57,10 @@ public class PlayerFishing : MonoBehaviour
     IEnumerator DestroyBob()
     {
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         
         Destroy(bobber);
+        QTE = false;
         casted = false;
         failed = false;
 

@@ -65,6 +65,7 @@ public class SplashTrigger : MonoBehaviour
         GameObject bob = GameObject.FindWithTag("bobber");
         Destroy(bob);
         plFish.casted = false;
+        plFish.QTE = false;
         destroy = false;
     }
 
@@ -72,5 +73,6 @@ public class SplashTrigger : MonoBehaviour
     {
         yield return null;
         plFish.casted = false;
+        plFish.QTE = false;
     }
 }

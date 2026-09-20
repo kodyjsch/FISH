@@ -55,6 +55,7 @@ public class FishReturn : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if(ret == true)
         {
             if(instance != null)
@@ -65,7 +66,6 @@ public class FishReturn : MonoBehaviour
             float step = speed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, pole.transform.position, step);
-
            
         }
 

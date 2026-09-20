@@ -84,8 +84,8 @@ namespace EasyPeasyFirstPersonController
 
         void OnGUI()
         {
-            if (currentState != null && Application.isEditor && currentStateDebug)
-                GUILayout.Label("Current State: " + currentState.GetType().Name);
+            //if (currentState != null && Application.isEditor && currentStateDebug)
+            //    GUILayout.Label("Current State: " + currentState.GetType().Name);
         }
 
         private void Awake()

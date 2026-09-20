@@ -14,6 +14,11 @@ public class QTEText : MonoBehaviour
 
     private QTESys qS;
 
+    public float duration = 5.0f;
+    public Color targetColor = Color.red;
+
+    private IEnumerator timer;
+
     private void Start()
     {
         target = Random.Range(0, letters.Count);
@@ -35,7 +40,11 @@ public class QTEText : MonoBehaviour
         {
             turnOrder = 2;
         }
-        
+
+
+        timer = TransitionColorRoutine();
+        StartCoroutine(timer);
+
     }
 
     private void Update()
@@ -45,12 +54,14 @@ public class QTEText : MonoBehaviour
         {
             if (Input.GetKeyDown(keys[target]))
             {
+                StopCoroutine(timer);
                 TMP.color = Color.green;
                 qS.correct++;
                 StartCoroutine(updateOrder());
             }
             else if (Input.anyKeyDown && !Input.GetKeyDown(keys[target]))
             {
+                StopCoroutine(timer);
                 TMP.color = Color.red;
                 qS.fail = true;
 
@@ -66,4 +77,30 @@ public class QTEText : MonoBehaviour
         qS.QTETurn++;
     }
 
+    private IEnumerator TransitionColorRoutine()
+    {
+        Color startColor = TMP.color;
+        float elapsedTime = 0f;
+
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Calculate normalized time (0.0 to 1.0)
+            float t = Mathf.Clamp01(elapsedTime / duration);
+
+            // Linearly interpolate between the start and target color
+            TMP.color = Color.Lerp(startColor, targetColor, t);
+
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure the exact target color is set at the end
+        TMP.color = targetColor;
+        qS.fail = true;
+    }
 }
+
+
+
