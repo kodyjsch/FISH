@@ -5,6 +5,7 @@ using TMPro;
 
 public class QTEText : MonoBehaviour
 {
+    [Header("Alphabet Keys")]
     public List<string> letters = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
     public List<KeyCode> keys = new List<KeyCode>() { KeyCode.A, KeyCode.B, KeyCode.C, KeyCode.D, KeyCode.E, KeyCode.F, KeyCode.G, KeyCode.H, KeyCode.I, KeyCode.J, KeyCode.K, KeyCode.L, KeyCode.M, KeyCode.N, KeyCode.O, KeyCode.P, KeyCode.Q, KeyCode.R, KeyCode.S, KeyCode.T, KeyCode.U, KeyCode.V, KeyCode.W, KeyCode.X, KeyCode.Y, KeyCode.Z };
 
@@ -15,9 +16,15 @@ public class QTEText : MonoBehaviour
     private QTESys qS;
 
     public float duration = 5.0f;
-    public Color targetColor = Color.red;
 
     private IEnumerator timer;
+
+    public Color start;
+    public Color mid;
+    public Color end;
+
+    public Color win;
+    public Color lose;
 
     private void Start()
     {
@@ -25,6 +32,7 @@ public class QTEText : MonoBehaviour
 
         TMP = GetComponent<TMP_Text>();
         TMP.SetText(letters[target]);
+        TMP.color = start;
 
         qS = GameObject.FindWithTag("QTE").GetComponent<QTESys>();
 
@@ -55,14 +63,14 @@ public class QTEText : MonoBehaviour
             if (Input.GetKeyDown(keys[target]))
             {
                 StopCoroutine(timer);
-                TMP.color = Color.green;
+                TMP.color = win;
                 qS.correct++;
                 StartCoroutine(updateOrder());
             }
             else if (Input.anyKeyDown && !Input.GetKeyDown(keys[target]))
             {
                 StopCoroutine(timer);
-                TMP.color = Color.red;
+                TMP.color = lose;
                 qS.fail = true;
 
             }
@@ -79,26 +87,15 @@ public class QTEText : MonoBehaviour
 
     private IEnumerator TransitionColorRoutine()
     {
-        Color startColor = TMP.color;
-        float elapsedTime = 0f;
 
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-
-            // Calculate normalized time (0.0 to 1.0)
-            float t = Mathf.Clamp01(elapsedTime / duration);
-
-            // Linearly interpolate between the start and target color
-            TMP.color = Color.Lerp(startColor, targetColor, t);
-
-            yield return null; // Wait for the next frame
-        }
-
-        // Ensure the exact target color is set at the end
-        TMP.color = targetColor;
+        yield return new WaitForSeconds(duration / 3);
+        TMP.color = mid;
+        yield return new WaitForSeconds(duration / 3);
+        TMP.color = end;
+        yield return new WaitForSeconds(duration / 3);
+        TMP.color = lose;
         qS.fail = true;
+
     }
 }
 
