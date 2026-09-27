@@ -34,7 +34,7 @@ public class FishReturn : MonoBehaviour
 
     IEnumerator catchFish()
     {
-        yield return new WaitForSeconds((Random.Range(3, 16)));
+        yield return new WaitForSeconds((Random.Range(5, 16)));
         fish = true;
 
         instance = Instantiate(bubble, transform.position, Quaternion.identity);
