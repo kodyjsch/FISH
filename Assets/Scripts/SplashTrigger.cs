@@ -17,10 +17,14 @@ public class SplashTrigger : MonoBehaviour
     public GameObject screen;
     private bool destroy = false;
 
+    public Canvas counter;
+    public spawnFish sF;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
         plFish = GameObject.Find("Caster").GetComponent<PlayerFishing>();
+        sF = counter.GetComponent<spawnFish>();
     }
 
     private void Update()
@@ -41,6 +45,7 @@ public class SplashTrigger : MonoBehaviour
         {
             destroy = true;
             fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
+            sF.spawn(fRet.chosenFish);
 
             if (fList.firstCatch[fRet.chosenFish] == false)
             {
@@ -55,7 +60,8 @@ public class SplashTrigger : MonoBehaviour
             } else if (fList.firstCatch[fRet.chosenFish] == true)
             {
                 StartCoroutine(killFish());
-            }           
+            }
+                        
         }
     }
 
