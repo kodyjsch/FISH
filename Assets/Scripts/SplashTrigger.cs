@@ -20,6 +20,8 @@ public class SplashTrigger : MonoBehaviour
     public Canvas counter;
     public spawnFish sF;
 
+    public AudioSource aS;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
@@ -43,6 +45,7 @@ public class SplashTrigger : MonoBehaviour
     {
         if (other.CompareTag("fish") && destroy == false)
         {
+            aS.Play();
             destroy = true;
             fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
             sF.spawn(fRet.chosenFish);

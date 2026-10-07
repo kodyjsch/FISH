@@ -15,7 +15,7 @@ public class QTEText : MonoBehaviour
 
     private QTESys qS;
 
-    public float duration = 2.0f;
+    public float duration = 1.5f;
 
     private IEnumerator timer;
 

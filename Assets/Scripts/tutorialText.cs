@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,15 +23,21 @@ public class tutorialText : MonoBehaviour
     IEnumerator started()
     {
         yield return new WaitForSeconds(3.0f);
-        tutText.text = TutorialLines[0];
-        txt.SetActive(true);
-        yield return new WaitForSeconds(3.0f);
-        txt.SetActive(false);
+
+        for (int i = 0; i < ((TutorialLines.Count) - 1); i++)
+        {
+            tutText.text = TutorialLines[i];
+            txt.SetActive(true);
+            yield return new WaitForSeconds(3.0f);
+            txt.SetActive(false);
+            yield return new WaitForSeconds(3.0f);
+        }
+
     }
 
     IEnumerator cast()
     {
-        tutText.text = TutorialLines[1];
+        tutText.text = TutorialLines[3];
         txt.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         txt.SetActive(false);
@@ -49,6 +56,7 @@ public class tutorialText : MonoBehaviour
         if(fR.fish == true && final == false)
         {
             final = true;
+            StopCoroutine(started());
             StartCoroutine(cast());
         }
 
