@@ -152,31 +152,136 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefabs:
-  - {fileID: 4530833298855469870, guid: d96c1951644df674999b4604176df6ad, type: 3}
-  - {fileID: 2521616948744284423, guid: de954732ff42f164ebc0b2ecdcba1bd4, type: 3}
   - {fileID: 1927676911963394388, guid: 9940893955a64824f998e3b2cc9f8df3, type: 3}
+  - {fileID: 7498095396138293048, guid: 508f59327bbbc464a856e260b69e6b19, type: 3}
+  - {fileID: 4934159294816727857, guid: a89065b282f17fb49a77b668d0a3de55, type: 3}
+  - {fileID: 4530833298855469870, guid: d96c1951644df674999b4604176df6ad, type: 3}
+  - {fileID: 420506697238720197, guid: 64cebc966c0ef6240b6da1bb7778b761, type: 3}
+  - {fileID: 3579565206735044551, guid: 89ca9f6d82f22384c941ba428499868f, type: 3}
+  - {fileID: 1011863638394929982, guid: f5cf1408768be35419d6c8dcf1034cea, type: 3}
+  - {fileID: 1666274352570191983, guid: f7447562e6e5a844a9fc3990c62beca0, type: 3}
+  - {fileID: 8084704629337376818, guid: af7274154ad2cf643a3858d26fe7432b, type: 3}
+  - {fileID: 5118438065258139027, guid: 7eb5e93d50e237947a79382c1a50f475, type: 3}
+  - {fileID: 8417311554256727649, guid: d28e58caf1fb1b046894118928d5a104, type: 3}
+  - {fileID: 1143294482041495007, guid: 6274e7ead93b86243a6ee9544a6172ba, type: 3}
+  - {fileID: 3154404893283847346, guid: edd14e3e4f6169d4f905c7e896cef279, type: 3}
+  - {fileID: 4834094419488945764, guid: 42c18e75a23031745be3e710be13ba3d, type: 3}
+  - {fileID: 7899240864023354458, guid: 3c923656c79ee5f4eaffd56d87ad9b80, type: 3}
+  - {fileID: 394261297242455902, guid: 78f3a17befbd36f4fac72407b14940fd, type: 3}
+  - {fileID: 6901991892565804386, guid: 32e0f62bb0cabf34db637f7acfed974e, type: 3}
+  - {fileID: 2521616948744284423, guid: de954732ff42f164ebc0b2ecdcba1bd4, type: 3}
+  - {fileID: 12019102608158595, guid: f2258f0c263cdf343a6de955296d8ec5, type: 3}
+  - {fileID: 437289244946424088, guid: 75e6bbc2f58d78d4e9326f76dcbdb652, type: 3}
+  - {fileID: 45983872876854459, guid: 860176fc9c9796f438cbe3c4a525f3e2, type: 3}
+  - {fileID: 1013557941943777297, guid: afb0a53b39e4de94a8a98ea1e7bf6439, type: 3}
+  - {fileID: 1880286287007939026, guid: 6af36cfa2f50aff489ce2240e66874a9, type: 3}
+  - {fileID: 6037506348780209686, guid: bd37527a49b6b844c86399ab38fdc53f, type: 3}
   - {fileID: 5484971696527402859, guid: ac5fcc9409ddaab4da2c577936dc428c, type: 3}
   splashSprites:
-  - {fileID: 21300000, guid: 1bf7bcc0b0dc6244ba90718c0e5822e1, type: 3}
-  - {fileID: 21300000, guid: 89a49a79bdba3db40a5f0688f4787ba4, type: 3}
   - {fileID: 21300000, guid: b4a2bc328aec388458b0a610806a8a6e, type: 3}
+  - {fileID: 21300000, guid: 7b9e21ca924490042a017b887add32b0, type: 3}
+  - {fileID: 21300000, guid: 18931026c93aaf04199469e521a1c839, type: 3}
+  - {fileID: 21300000, guid: 1bf7bcc0b0dc6244ba90718c0e5822e1, type: 3}
+  - {fileID: 21300000, guid: 0da62e5dc818f7a4d8b346f1fa03a92a, type: 3}
+  - {fileID: 21300000, guid: 9f23f43d3c26bd045bc176c699bc6374, type: 3}
+  - {fileID: 21300000, guid: 5cbb263815c943b4398e372167e4808f, type: 3}
+  - {fileID: 21300000, guid: 4d9d20af7970f8b4aad54a35a0eb1320, type: 3}
+  - {fileID: 21300000, guid: 2bdc22b8014b6d74d9ce208f3c191b9d, type: 3}
+  - {fileID: 21300000, guid: 15c98717fa874bd44bf02fe1d1ea8eb1, type: 3}
+  - {fileID: 21300000, guid: 7d77211b20e312a4e8b0c0fd139d520b, type: 3}
+  - {fileID: 21300000, guid: 5d09bb983e655434e87c7a71593e6ab1, type: 3}
+  - {fileID: 21300000, guid: c719c5e991d4dd042a516c1a34cc9905, type: 3}
+  - {fileID: 21300000, guid: 1af700ee9f27eae448909e880bde5f8f, type: 3}
+  - {fileID: 21300000, guid: 86e760dcb6fdb714d9618af6c24c6941, type: 3}
+  - {fileID: 21300000, guid: 25ee70379065f0443b10b91d298403a3, type: 3}
+  - {fileID: 21300000, guid: 5fba1245e998f2240913f30081539f3b, type: 3}
+  - {fileID: 21300000, guid: d81bde1ad3dc7f94d8c0f8baf1c3f801, type: 3}
+  - {fileID: 21300000, guid: 64fe1ac631417eb40a7be6f40ba405cc, type: 3}
+  - {fileID: 21300000, guid: 60c92d5cf0b46294f919a78403f5dcc0, type: 3}
+  - {fileID: 21300000, guid: 4f0b802ee90122f4d96e65103e377a5a, type: 3}
+  - {fileID: 21300000, guid: e544361c614a6d842972e50c783a560f, type: 3}
+  - {fileID: 21300000, guid: 3e939f2a1b1b08d45a462398dc337302, type: 3}
+  - {fileID: 21300000, guid: 3b11310be9e16a44c976161ce94713e5, type: 3}
   - {fileID: 21300000, guid: 976c33c7cb80e0643adb8d9d7486ad1b, type: 3}
   counterSprites:
   - {fileID: 4530833298855469870, guid: c19c48cbc34ec284dba0a1c8f2c18a6c, type: 3}
   - {fileID: 2521616948744284423, guid: 486fb2626f54111458e5e7a749fb5eb8, type: 3}
   - {fileID: 1927676911963394388, guid: a1be87ec7f4db9745aaccf80a71493fb, type: 3}
   - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  firstCatch: 00000000
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
+  firstCatch: 00000000000000000000000000000000000000000000000000
   Names:
-  - Blobfish
-  - Scaly Pothos
   - Bass
+  - BeneFISHiary
+  - Bish
+  - Blobfish
+  - Clownfish
+  - Dish
+  - Dogfish
+  - Gar
+  - Grand Slamon
+  - Kissing Fish
+  - Le Grand Poisson
+  - Lovester
+  - Pilotfish
+  - Plantbone
+  - Plecostomaid
+  - Quetzal Koi
+  - Red Herringbone
+  - Scaly Pothos
+  - Seafood Boil
+  - Sharkcuterie
+  - Shoefish
+  - Squard
+  - Stink Ray
+  - Swordfish
   - Tully Jr.
   OneLiners:
   - This deep-sea fish is exploding with excitement!
   - Oh no! You found me!
   - It's pronounced "bass".
   - Please, Tulli Monstrum was my father. Call me Tully.
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
+  - Zinger TBA!
 --- !u!4 &291893637
 Transform:
   m_ObjectHideFlags: 0
