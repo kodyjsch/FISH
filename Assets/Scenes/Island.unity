@@ -122,6 +122,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &115403916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115403917}
+  - component: {fileID: 115403918}
+  m_Layer: 0
+  m_Name: WaterTrigger
+  m_TagString: water
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115403917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115403916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 410371692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &115403918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115403916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.12, y: 1, z: 10.19}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &291893635
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +209,7 @@ MonoBehaviour:
   - {fileID: 7498095396138293048, guid: 508f59327bbbc464a856e260b69e6b19, type: 3}
   - {fileID: 4934159294816727857, guid: a89065b282f17fb49a77b668d0a3de55, type: 3}
   - {fileID: 4530833298855469870, guid: d96c1951644df674999b4604176df6ad, type: 3}
+  - {fileID: 215332878775607461, guid: dacb0afbf6fe0bc45a3816461c818a6a, type: 3}
   - {fileID: 420506697238720197, guid: 64cebc966c0ef6240b6da1bb7778b761, type: 3}
   - {fileID: 3579565206735044551, guid: 89ca9f6d82f22384c941ba428499868f, type: 3}
   - {fileID: 1011863638394929982, guid: f5cf1408768be35419d6c8dcf1034cea, type: 3}
@@ -164,6 +218,8 @@ MonoBehaviour:
   - {fileID: 5118438065258139027, guid: 7eb5e93d50e237947a79382c1a50f475, type: 3}
   - {fileID: 8417311554256727649, guid: d28e58caf1fb1b046894118928d5a104, type: 3}
   - {fileID: 1143294482041495007, guid: 6274e7ead93b86243a6ee9544a6172ba, type: 3}
+  - {fileID: 7855654034707707882, guid: 108d539eba443174695a3c8bc03b7a79, type: 3}
+  - {fileID: 7808628010673725281, guid: e791843a12605a54f8bee508c0f867f0, type: 3}
   - {fileID: 3154404893283847346, guid: edd14e3e4f6169d4f905c7e896cef279, type: 3}
   - {fileID: 4834094419488945764, guid: 42c18e75a23031745be3e710be13ba3d, type: 3}
   - {fileID: 7899240864023354458, guid: 3c923656c79ee5f4eaffd56d87ad9b80, type: 3}
@@ -172,9 +228,11 @@ MonoBehaviour:
   - {fileID: 2521616948744284423, guid: de954732ff42f164ebc0b2ecdcba1bd4, type: 3}
   - {fileID: 12019102608158595, guid: f2258f0c263cdf343a6de955296d8ec5, type: 3}
   - {fileID: 437289244946424088, guid: 75e6bbc2f58d78d4e9326f76dcbdb652, type: 3}
+  - {fileID: 3148777278905604006, guid: af43eb1ad0bed434b987a2f36ec41c01, type: 3}
   - {fileID: 45983872876854459, guid: 860176fc9c9796f438cbe3c4a525f3e2, type: 3}
   - {fileID: 1013557941943777297, guid: afb0a53b39e4de94a8a98ea1e7bf6439, type: 3}
   - {fileID: 1880286287007939026, guid: 6af36cfa2f50aff489ce2240e66874a9, type: 3}
+  - {fileID: 2971488403281796547, guid: 5db3df84053f1724a9ec1ac0225ed27e, type: 3}
   - {fileID: 6037506348780209686, guid: bd37527a49b6b844c86399ab38fdc53f, type: 3}
   - {fileID: 5484971696527402859, guid: ac5fcc9409ddaab4da2c577936dc428c, type: 3}
   splashSprites:
@@ -182,7 +240,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7b9e21ca924490042a017b887add32b0, type: 3}
   - {fileID: 21300000, guid: 18931026c93aaf04199469e521a1c839, type: 3}
   - {fileID: 21300000, guid: 1bf7bcc0b0dc6244ba90718c0e5822e1, type: 3}
-  - {fileID: 21300000, guid: 0da62e5dc818f7a4d8b346f1fa03a92a, type: 3}
+  - {fileID: 21300000, guid: 8497b0af0e58eee488646e6e5a0c5170, type: 3}
+  - {fileID: 21300000, guid: 6a7dfd5f4cbeafa48ade02e123cee1dd, type: 3}
   - {fileID: 21300000, guid: 8e01e792199aa7b43852e9e7d053fe43, type: 3}
   - {fileID: 21300000, guid: 5cbb263815c943b4398e372167e4808f, type: 3}
   - {fileID: 21300000, guid: 4d9d20af7970f8b4aad54a35a0eb1320, type: 3}
@@ -190,6 +249,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 15c98717fa874bd44bf02fe1d1ea8eb1, type: 3}
   - {fileID: 21300000, guid: 7d77211b20e312a4e8b0c0fd139d520b, type: 3}
   - {fileID: 21300000, guid: 5d09bb983e655434e87c7a71593e6ab1, type: 3}
+  - {fileID: 21300000, guid: e5e5f13be34561643ab04e71c02e2646, type: 3}
+  - {fileID: 21300000, guid: 8b139b4e830032d4d9d08e28700ad1e9, type: 3}
   - {fileID: 21300000, guid: c719c5e991d4dd042a516c1a34cc9905, type: 3}
   - {fileID: 21300000, guid: 1af700ee9f27eae448909e880bde5f8f, type: 3}
   - {fileID: 21300000, guid: 86e760dcb6fdb714d9618af6c24c6941, type: 3}
@@ -198,43 +259,51 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 89a49a79bdba3db40a5f0688f4787ba4, type: 3}
   - {fileID: 21300000, guid: 64fe1ac631417eb40a7be6f40ba405cc, type: 3}
   - {fileID: 21300000, guid: 60c92d5cf0b46294f919a78403f5dcc0, type: 3}
+  - {fileID: 21300000, guid: bfc046c8f98bfc9438c97a65b5ae0a1b, type: 3}
   - {fileID: 21300000, guid: 4f0b802ee90122f4d96e65103e377a5a, type: 3}
   - {fileID: 21300000, guid: e544361c614a6d842972e50c783a560f, type: 3}
   - {fileID: 21300000, guid: 3e939f2a1b1b08d45a462398dc337302, type: 3}
+  - {fileID: 21300000, guid: 1c9d8009909da154db837f4be84b273a, type: 3}
   - {fileID: 21300000, guid: 3b11310be9e16a44c976161ce94713e5, type: 3}
   - {fileID: 21300000, guid: 976c33c7cb80e0643adb8d9d7486ad1b, type: 3}
   counterSprites:
-  - {fileID: 4530833298855469870, guid: c19c48cbc34ec284dba0a1c8f2c18a6c, type: 3}
-  - {fileID: 2521616948744284423, guid: 486fb2626f54111458e5e7a749fb5eb8, type: 3}
-  - {fileID: 1927676911963394388, guid: a1be87ec7f4db9745aaccf80a71493fb, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  - {fileID: 5484971696527402859, guid: 99703bb2f9af0d2469a56b6b8a092877, type: 3}
-  firstCatch: 00000000000000000000000000000000000000000000000000
+  - {fileID: 8895403742384442697, guid: a1be87ec7f4db9745aaccf80a71493fb, type: 3}
+  - {fileID: 9094786495922452336, guid: 4c9bc643938090d4ab2ce54668f9a977, type: 3}
+  - {fileID: 4677525736122972822, guid: a9ef1739fa95ae341b18d551a1bd74ee, type: 3}
+  - {fileID: 516629245539164015, guid: c19c48cbc34ec284dba0a1c8f2c18a6c, type: 3}
+  - {fileID: 4678855240060557830, guid: d807f5caccc38dc48a13c855f852ae20, type: 3}
+  - {fileID: 6442992492149212007, guid: 624c071f1de575042975e57a0c8d3870, type: 3}
+  - {fileID: 5188680229890573909, guid: 94f45e94a47eb12459178d3c9daa55cd, type: 3}
+  - {fileID: 1847104800767427632, guid: f4f3441ba5157c74c8210946bf9ffe6a, type: 3}
+  - {fileID: 4720129554437372399, guid: 0bb69549bea5b1140a203171482105bd, type: 3}
+  - {fileID: 5407675133072502560, guid: 3afaf9e87be159b44b0779aab6c4b815, type: 3}
+  - {fileID: 9139300806262892853, guid: 6d6aaa04ba996d0488af3aaa56001036, type: 3}
+  - {fileID: 8947649925532025473, guid: f154091041305b94dba652df609842ac, type: 3}
+  - {fileID: 8947649925532025473, guid: b31c7e93997239241a6d9e21abb94794, type: 3}
+  - {fileID: 4845266477005452130, guid: 1cfe4c40f5936cb46aac2eca392ba7cc, type: 3}
+  - {fileID: 8845674561630127854, guid: df14d8fc7d63e4842ab09f73879db043, type: 3}
+  - {fileID: 6040869602721056723, guid: 672c0fc66887d464bad04598c57fe249, type: 3}
+  - {fileID: 512199620297936883, guid: 57b1ff391429a754a881f7351c5fa110, type: 3}
+  - {fileID: 5326855280584563682, guid: 80ee3db7791c75c41a3bb33392772f5d, type: 3}
+  - {fileID: 3825863601186208930, guid: 373aa300ff9d24f4ca67256668c10766, type: 3}
+  - {fileID: 3949866136578730897, guid: e45e4fae3889c79428566a31635d4a76, type: 3}
+  - {fileID: 4398244053519953312, guid: 486fb2626f54111458e5e7a749fb5eb8, type: 3}
+  - {fileID: 8509429700865922467, guid: 938b7a58312a2044f8adb6797243087f, type: 3}
+  - {fileID: 6742776145177912861, guid: 70331a5eb5e2abd4c81d2a4cb0229bff, type: 3}
+  - {fileID: 956954299515865278, guid: 112e47934eee7ac40b8bd18fe0273fb3, type: 3}
+  - {fileID: 3950856932093318589, guid: cad383cbc62a87143b5dda855570da96, type: 3}
+  - {fileID: 2142862579020276762, guid: b2fcd4c124d9ffb4f98155306b7be7ea, type: 3}
+  - {fileID: 2919694277832046284, guid: a7023d3709ac43547ad06779b4a58b61, type: 3}
+  - {fileID: 7175641231647102421, guid: 2784bb0b3ed3cbc4dba29708b59136a4, type: 3}
+  - {fileID: 6328571123139038720, guid: 4ab4ea2ed99e00e44a5574b4e3c34752, type: 3}
+  - {fileID: 202308614073581990, guid: 8d712d7cdfe6f074a908496e32fab91e, type: 3}
+  firstCatch: 000000000000000000000000000000000000000000000000000000000000
   Names:
   - Bass
   - BeneFISHiary
   - Bish
   - Blobfish
+  - Catfish
   - Clownfish
   - Dish
   - Dogfish
@@ -243,6 +312,8 @@ MonoBehaviour:
   - Kissing Fish
   - Le Grand Poisson
   - Lovester
+  - Mangaka Fish
+  - Monarch Butterfish
   - Pilotfish
   - Plantbone
   - Plecostomaid
@@ -250,17 +321,26 @@ MonoBehaviour:
   - Red Herringbone
   - Scaly Pothos
   - Seafood Boil
-  - Sharkcuterie
+  - Sharkcuteri
+  - Sheepshead Fish
   - Shoefish
   - Squard
   - Stink Ray
+  - Sunset Guppy
   - Swordfish
   - Tully Jr.
   OneLiners:
-  - This deep-sea fish is exploding with excitement!
-  - Oh no! You found me!
   - It's pronounced "bass".
-  - Please, Tulli Monstrum was my father. Call me Tully.
+  - The shack is in good hands!
+  - It's Britney bish.
+  - Now with human legs!
+  - Meow :3
+  - She's on break, what are you looking at?
+  - It's FINner time!
+  - Just imagine the smell...
+  - You're telling me a gar licked this bread?
+  - KABOOM!
+  - Mmmmmmmmmmmmmmmwah!
   - Zinger TBA!
   - Zinger TBA!
   - Zinger TBA!
@@ -279,9 +359,7 @@ MonoBehaviour:
   - Zinger TBA!
   - Zinger TBA!
   - Zinger TBA!
-  - Zinger TBA!
-  - Zinger TBA!
-  - Zinger TBA!
+  - Tullimontrum was my father. Please, call me Tully.
 --- !u!4 &291893637
 Transform:
   m_ObjectHideFlags: 0
@@ -378,7 +456,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -17.76, z: 0.5}
   m_LocalScale: {x: 100, y: 20, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 115403917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &410371693
@@ -1592,6 +1671,11 @@ PrefabInstance:
       propertyPath: SplashSprite
       value: 
       objectReference: {fileID: 1448589503}
+    - target: {fileID: 5648341134871814602, guid: c82236c16aae9d34fbd437f8dea6e2c9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -53.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1646,6 +1730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156347144755971339, guid: c82236c16aae9d34fbd437f8dea6e2c9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
