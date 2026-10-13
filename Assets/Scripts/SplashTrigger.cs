@@ -22,6 +22,8 @@ public class SplashTrigger : MonoBehaviour
 
     public AudioSource aS;
 
+    public Animator arms;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
@@ -45,13 +47,15 @@ public class SplashTrigger : MonoBehaviour
     {
         if (other.CompareTag("fish") && destroy == false)
         {
-            aS.Play();
+            arms.ResetTrigger("Reel");
+            arms.SetTrigger("Idle");
             destroy = true;
             fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
             sF.spawn(fRet.chosenFish);
 
             if (fList.firstCatch[fRet.chosenFish] == false)
             {
+                aS.Play();
                 fList.firstCatch[fRet.chosenFish] = true;
                 SplashSprite.sprite = fList.splashSprites[fRet.chosenFish];
                 Name.text = fList.Names[fRet.chosenFish];
