@@ -20,6 +20,11 @@ public class FishReturn : MonoBehaviour
 
     public GameObject QTESys;
 
+    public GameObject tut;
+
+    public AudioSource splash;
+    public bool inWater = false;
+
     private void Awake()
     {
         pole = GameObject.FindWithTag("pole");
@@ -29,16 +34,22 @@ public class FishReturn : MonoBehaviour
 
         chosenFish = Random.Range(0, list.fishPrefabs.Count);
 
-        StartCoroutine(catchFish());
+        tut = GameObject.FindWithTag("tutorial"); 
+
     }
 
-    IEnumerator catchFish()
+    public void fishSpawn()
     {
-        yield return new WaitForSeconds((Random.Range(5, 16)));
         fish = true;
-
         instance = Instantiate(bubble, transform.position, Quaternion.identity);
     }
+
+    IEnumerator fishDelayer()
+    {
+        yield return new WaitForSeconds(Random.Range(5, 16));
+        fishSpawn();
+    }
+
     public void LineReturn()
     {
         ret = true;
@@ -72,5 +83,20 @@ public class FishReturn : MonoBehaviour
         
     }
 
-    
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("water") && inWater == false)
+        {
+            splash.Play();
+            inWater = true;
+
+            if (tut == null)
+            {
+                StartCoroutine(fishDelayer());
+            }
+
+        }
+    }
+
+
 }

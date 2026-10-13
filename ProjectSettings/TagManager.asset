@@ -15,6 +15,7 @@ TagManager:
   - three
   - QTE
   - water
+  - tutorial
   layers:
   - Default
   - TransparentFX

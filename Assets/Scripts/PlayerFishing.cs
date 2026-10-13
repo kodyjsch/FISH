@@ -13,6 +13,8 @@ public class PlayerFishing : MonoBehaviour
     private FishReturn fishReturn;
 
     public Animator arms;
+    public AudioSource swoosh;
+    public AudioSource reel;
 
     private void Update()
     {
@@ -34,7 +36,9 @@ public class PlayerFishing : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3f);
+
         
+
         Destroy(bobber);
         QTE = false;
         casted = false;
@@ -42,6 +46,10 @@ public class PlayerFishing : MonoBehaviour
 
         arms.ResetTrigger("Reel");
         arms.SetTrigger("Idle");
+        if (reel.isPlaying)
+        {
+            reel.Stop();
+        }
 
     }
 
@@ -53,6 +61,7 @@ public class PlayerFishing : MonoBehaviour
             arms.ResetTrigger("Idle");
             arms.SetTrigger("Cast");
             yield return new WaitForSeconds(0.8f);
+            swoosh.Play();
             casted = true;
             Rigidbody cast = Instantiate(rb, transform.position, transform.rotation);
             cast.velocity = transform.forward * speed;
@@ -68,6 +77,11 @@ public class PlayerFishing : MonoBehaviour
 
                 arms.ResetTrigger("Cast");
                 arms.SetTrigger("Reel");
+
+                if (!reel.isPlaying)
+                {
+                    reel.Play();
+                }
 
                 if (fishReturn.fish == true && QTE == false)
                 {

@@ -45,10 +45,16 @@ public class SplashTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        arms.ResetTrigger("Reel");
+        arms.SetTrigger("Idle");
+        if (plFish.reel.isPlaying)
+        {
+            plFish.reel.Stop();
+        }
+
         if (other.CompareTag("fish") && destroy == false)
         {
-            arms.ResetTrigger("Reel");
-            arms.SetTrigger("Idle");
             destroy = true;
             fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
             sF.spawn(fRet.chosenFish);
@@ -77,6 +83,10 @@ public class SplashTrigger : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         GameObject bob = GameObject.FindWithTag("bobber");
         Destroy(bob);
+        if (plFish.reel.isPlaying)
+        {
+            plFish.reel.Stop();
+        }
         plFish.casted = false;
         plFish.QTE = false;
         destroy = false;

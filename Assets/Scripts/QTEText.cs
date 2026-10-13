@@ -26,6 +26,11 @@ public class QTEText : MonoBehaviour
     public Color win;
     public Color lose;
 
+    private bool tried = false;
+
+    public AudioSource good;
+    public AudioSource bad;
+
     private void Start()
     {
         target = Random.Range(0, letters.Count);
@@ -58,10 +63,11 @@ public class QTEText : MonoBehaviour
     private void Update()
     {
 
-        if (turnOrder == qS.QTETurn)
+        if (turnOrder == qS.QTETurn && tried == false)
         {
             if (Input.GetKeyDown(keys[target]))
             {
+                good.Play();
                 StopCoroutine(timer);
                 TMP.color = win;
                 qS.correct++;
@@ -69,6 +75,8 @@ public class QTEText : MonoBehaviour
             }
             else if (Input.anyKeyDown && !Input.GetKeyDown(keys[target]))
             {
+                bad.Play();
+                tried = true;
                 StopCoroutine(timer);
                 TMP.color = lose;
                 qS.fail = true;
