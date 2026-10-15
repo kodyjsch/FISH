@@ -61,6 +61,7 @@ public class QTESys : MonoBehaviour
     IEnumerator failed()
     {
         yield return new WaitForSeconds(1.5f);
+        fR.sad = true;
         fR.ret = true;
         pF.failed = true;
         Destroy(gameObject);

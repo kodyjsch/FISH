@@ -25,6 +25,10 @@ public class FishReturn : MonoBehaviour
     public AudioSource splash;
     public bool inWater = false;
 
+    public bool sad = true;
+    public Sprite wormSad;
+    public SpriteRenderer sR;
+
     private void Awake()
     {
         pole = GameObject.FindWithTag("pole");
@@ -34,13 +38,16 @@ public class FishReturn : MonoBehaviour
 
         chosenFish = Random.Range(0, list.fishPrefabs.Count);
 
-        tut = GameObject.FindWithTag("tutorial"); 
+        tut = GameObject.FindWithTag("tutorial");
+
+        sR = GetComponentInChildren<SpriteRenderer>();
 
     }
 
     public void fishSpawn()
     {
         fish = true;
+        sad = false;
         instance = Instantiate(bubble, transform.position, Quaternion.identity);
     }
 
@@ -69,6 +76,12 @@ public class FishReturn : MonoBehaviour
 
         if(ret == true)
         {
+            if(sad == true)
+            {
+                sad = false;
+                sR.sprite = wormSad;
+            }
+
             if(instance != null)
             {
                 Destroy(instance);

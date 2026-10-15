@@ -35,7 +35,7 @@ public class PlayerFishing : MonoBehaviour
     IEnumerator DestroyBob()
     {
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4.0f);
 
         
 

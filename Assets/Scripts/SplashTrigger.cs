@@ -36,6 +36,8 @@ public class SplashTrigger : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && screen.activeInHierarchy)
         {
+            arms.ResetTrigger("Reel");
+            arms.SetTrigger("Idle");
             screen.SetActive(false);
             destroy = false;
             StartCoroutine(Cast());
@@ -46,8 +48,6 @@ public class SplashTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        arms.ResetTrigger("Reel");
-        arms.SetTrigger("Idle");
         if (plFish.reel.isPlaying)
         {
             plFish.reel.Stop();
@@ -87,6 +87,8 @@ public class SplashTrigger : MonoBehaviour
         {
             plFish.reel.Stop();
         }
+        arms.ResetTrigger("Reel");
+        arms.SetTrigger("Idle");
         plFish.casted = false;
         plFish.QTE = false;
         destroy = false;

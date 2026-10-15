@@ -4,6 +4,8 @@ namespace EasyPeasyFirstPersonController
 
     public partial class FirstPersonController : MonoBehaviour
     {
+        private PauseMenu pM;
+
         [Header("Settings")]
         public float walkSpeed = 3f;
         public float sprintSpeed = 5f;
@@ -90,6 +92,8 @@ namespace EasyPeasyFirstPersonController
 
         private void Awake()
         {
+            pM = GameObject.FindWithTag("list").GetComponent<PauseMenu>();
+
             cam = playerCamera.GetComponent<Camera>();
             targetFov = normalFov;
             targetCameraY = standingCameraHeight;
@@ -119,6 +123,9 @@ namespace EasyPeasyFirstPersonController
 
         private void HandleRotation()
         {
+            if (pM.isPaused == true)
+                return;
+
             float mouseX = input.lookInput.x * mouseSensitivity;
             float mouseY = input.lookInput.y * mouseSensitivity;
 
