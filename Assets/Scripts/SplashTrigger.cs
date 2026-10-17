@@ -24,6 +24,9 @@ public class SplashTrigger : MonoBehaviour
 
     public Animator arms;
 
+    private GameObject bob;
+    private FishReturn fR;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
@@ -36,13 +39,21 @@ public class SplashTrigger : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && screen.activeInHierarchy)
         {
+            StopCoroutine(killFish());
             arms.ResetTrigger("Reel");
             arms.SetTrigger("Idle");
             screen.SetActive(false);
             destroy = false;
             StartCoroutine(Cast());
-
         }
+
+        bob = GameObject.FindWithTag("bobber");
+
+        if(bob != null)
+        {
+            fR = bob.GetComponent<FishReturn>();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,15 +78,16 @@ public class SplashTrigger : MonoBehaviour
                 Name.text = fList.Names[fRet.chosenFish];
                 Zinger.text = fList.OneLiners[fRet.chosenFish];
                 screen.SetActive(true);
-                GameObject bob = GameObject.FindWithTag("bobber");
                 Destroy(bob);
 
-            } else if (fList.firstCatch[fRet.chosenFish] == true)
-            {
-                StartCoroutine(killFish());
-            }
+            } 
                         
+        } else if (destroy == false && fR.sad == true)
+        {
+            destroy = true;
+            StartCoroutine(killFish());
         }
+
     }
 
     IEnumerator killFish()
@@ -100,4 +112,5 @@ public class SplashTrigger : MonoBehaviour
         plFish.casted = false;
         plFish.QTE = false;
     }
+
 }

@@ -19,54 +19,30 @@ public class PlayerFishing : MonoBehaviour
     private void Update()
     {
 
+        Debug.Log(casted);
+
         if (Input.GetMouseButtonDown(0)) 
         {
-
             StartCoroutine(castDelay());
         }
 
-        if(failed == true)
-        {
-            StartCoroutine(DestroyBob());
-        }
-
     }
 
-    IEnumerator DestroyBob()
-    {
-
-        yield return new WaitForSeconds(4.0f);
-
-        
-
-        Destroy(bobber);
-        QTE = false;
-        casted = false;
-        failed = false;
-
-        arms.ResetTrigger("Reel");
-        arms.SetTrigger("Idle");
-        if (reel.isPlaying)
-        {
-            reel.Stop();
-        }
-
-    }
 
     IEnumerator castDelay()
     {
 
         if (casted == false)
         {
+            casted = true;
             arms.ResetTrigger("Idle");
             arms.SetTrigger("Cast");
             yield return new WaitForSeconds(0.8f);
             swoosh.Play();
-            casted = true;
             Rigidbody cast = Instantiate(rb, transform.position, transform.rotation);
             cast.velocity = transform.forward * speed;
             bobber = GameObject.FindWithTag("bobber");
-            fishReturn = bobber.GetComponent<FishReturn>();
+            fishReturn = bobber.GetComponent<FishReturn>(); 
 
         }
         else if (casted == true)
@@ -92,7 +68,7 @@ public class PlayerFishing : MonoBehaviour
                 else if (fishReturn.fish == false)
                 {
                     fishReturn.ret = true;
-                    StartCoroutine(DestroyBob());
+                    fishReturn.sad = true;
                 }
 
             }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FishReturn : MonoBehaviour
@@ -25,13 +26,23 @@ public class FishReturn : MonoBehaviour
     public AudioSource splash;
     public bool inWater = false;
 
-    public bool sad = true;
+    public bool sad = false;
     public Sprite wormSad;
     public SpriteRenderer sR;
 
+    public static GameObject bobber;
+
     private void Awake()
     {
-        pole = GameObject.FindWithTag("pole");
+        if(bobber != null)
+        {
+            Destroy(gameObject);
+        } else
+        {
+            bobber = gameObject;
+        }
+
+            pole = GameObject.FindWithTag("pole");
         rb = GetComponent<Rigidbody>();
 
         list = GameObject.FindWithTag("list").GetComponent<FishList>();
@@ -47,7 +58,6 @@ public class FishReturn : MonoBehaviour
     public void fishSpawn()
     {
         fish = true;
-        sad = false;
         instance = Instantiate(bubble, transform.position, Quaternion.identity);
     }
 
@@ -60,10 +70,7 @@ public class FishReturn : MonoBehaviour
     public void LineReturn()
     {
         ret = true;
-
         GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
-        
-
     }
 
     public void QTESpawn()
@@ -78,7 +85,6 @@ public class FishReturn : MonoBehaviour
         {
             if(sad == true)
             {
-                sad = false;
                 sR.sprite = wormSad;
             }
 
