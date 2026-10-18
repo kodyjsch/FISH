@@ -64,7 +64,11 @@ public class SplashTrigger : MonoBehaviour
             plFish.reel.Stop();
         }
 
-        if (other.CompareTag("fish") && destroy == false)
+        if (other.CompareTag("Manmer"))
+        {
+
+        }
+        else if (other.CompareTag("fish") && destroy == false)
         {
             destroy = true;
             fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
@@ -80,7 +84,10 @@ public class SplashTrigger : MonoBehaviour
                 screen.SetActive(true);
                 Destroy(bob);
 
-            } 
+            } else
+            {
+                StartCoroutine(killFish());
+            }
                         
         } else if (destroy == false && fR.sad == true)
         {

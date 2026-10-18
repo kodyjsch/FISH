@@ -311,6 +311,7 @@ MonoBehaviour:
   sad: 0
   wormSad: {fileID: 21300000, guid: ffde2c5796861a449abec66084f5296b, type: 3}
   sR: {fileID: 0}
+  manmer: {fileID: 3000399781586666295, guid: a6a2ba0b8d419764c8e0693e74444a63, type: 3}
 --- !u!82 &6574968700007450103
 AudioSource:
   m_ObjectHideFlags: 0

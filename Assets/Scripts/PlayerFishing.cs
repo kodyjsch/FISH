@@ -19,8 +19,6 @@ public class PlayerFishing : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log(casted);
-
         if (Input.GetMouseButtonDown(0)) 
         {
             StartCoroutine(castDelay());

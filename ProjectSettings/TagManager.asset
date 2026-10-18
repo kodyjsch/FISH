@@ -16,6 +16,7 @@ TagManager:
   - QTE
   - water
   - tutorial
+  - Manmer
   layers:
   - Default
   - TransparentFX

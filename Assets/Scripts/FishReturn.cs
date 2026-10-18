@@ -32,6 +32,8 @@ public class FishReturn : MonoBehaviour
 
     public static GameObject bobber;
 
+    public GameObject manmer;
+
     private void Awake()
     {
         if(bobber != null)
@@ -42,17 +44,12 @@ public class FishReturn : MonoBehaviour
             bobber = gameObject;
         }
 
-            pole = GameObject.FindWithTag("pole");
+        pole = GameObject.FindWithTag("pole");
         rb = GetComponent<Rigidbody>();
-
         list = GameObject.FindWithTag("list").GetComponent<FishList>();
-
         chosenFish = Random.Range(0, list.fishPrefabs.Count);
-
         tut = GameObject.FindWithTag("tutorial");
-
         sR = GetComponentInChildren<SpriteRenderer>();
-
     }
 
     public void fishSpawn()
@@ -70,7 +67,15 @@ public class FishReturn : MonoBehaviour
     public void LineReturn()
     {
         ret = true;
-        GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
+
+        if(tut == null)
+        {
+            GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
+        } else
+        {
+            GameObject childObj = Instantiate(manmer, transform);
+        }
+        
     }
 
     public void QTESpawn()
