@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerFishing : MonoBehaviour
@@ -15,6 +16,12 @@ public class PlayerFishing : MonoBehaviour
     public Animator arms;
     public AudioSource swoosh;
     public AudioSource reel;
+
+
+    private void OnEnable()
+    {
+        StartCoroutine(pause());
+    }
 
     private void Update()
     {
@@ -71,6 +78,11 @@ public class PlayerFishing : MonoBehaviour
 
             }
         }
+    }
+
+    private IEnumerator pause()
+    {
+        yield return null;
     }
 
 

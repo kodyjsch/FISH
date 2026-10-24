@@ -27,6 +27,9 @@ public class SplashTrigger : MonoBehaviour
     private GameObject bob;
     private FishReturn fR;
 
+    public GameObject manmer;
+    private bool mA = false;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
@@ -37,14 +40,26 @@ public class SplashTrigger : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetMouseButtonDown(0) && screen.activeInHierarchy)
+        if (Input.GetMouseButtonDown(0))
         {
-            StopCoroutine(killFish());
-            arms.ResetTrigger("Reel");
-            arms.SetTrigger("Idle");
-            screen.SetActive(false);
-            destroy = false;
-            StartCoroutine(Cast());
+
+            if (screen.activeInHierarchy)
+            {
+                StopCoroutine(killFish());
+                arms.ResetTrigger("Reel");
+                arms.SetTrigger("Idle");
+                screen.SetActive(false);
+                destroy = false;
+                StartCoroutine(Cast());
+            }
+
+            if(mA == true)
+            {
+                arms.ResetTrigger("Reel");
+                arms.SetTrigger("Idle");
+                mA = false;
+                StartCoroutine(Cast());
+            }            
         }
 
         bob = GameObject.FindWithTag("bobber");
@@ -66,7 +81,9 @@ public class SplashTrigger : MonoBehaviour
 
         if (other.CompareTag("Manmer"))
         {
-
+            Instantiate(manmer);
+            mA = true;
+            Destroy(bob);
         }
         else if (other.CompareTag("fish") && destroy == false)
         {
@@ -100,7 +117,6 @@ public class SplashTrigger : MonoBehaviour
     IEnumerator killFish()
     {
         yield return new WaitForSeconds(2.5f);
-        GameObject bob = GameObject.FindWithTag("bobber");
         Destroy(bob);
         if (plFish.reel.isPlaying)
         {

@@ -17,6 +17,7 @@ TagManager:
   - water
   - tutorial
   - Manmer
+  - button
   layers:
   - Default
   - TransparentFX

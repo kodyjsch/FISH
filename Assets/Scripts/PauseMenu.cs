@@ -9,9 +9,16 @@ public class PauseMenu : MonoBehaviour
 
 
     public bool isPaused = false;
+    public bool dialogue = false;
 
     void Update()
     {
+
+        if(dialogue == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (isPaused)
@@ -20,22 +27,29 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
-                Pause();
+                Pause(true);
             }
         }
     }
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        if(pauseMenuUI.activeInHierarchy)
+        {
+            pauseMenuUI.SetActive(false);
+        }
         caster.SetActive(true);
         Time.timeScale = 1f;          
         isPaused = false;
     }
 
-    public void Pause()
+    public void Pause(bool menu)
     {
-        pauseMenuUI.SetActive(true);
+
+        if(menu == true)
+        {
+            pauseMenuUI.SetActive(true);
+        }
         caster.SetActive(false);
         Time.timeScale = 0f;          
         isPaused = true;
