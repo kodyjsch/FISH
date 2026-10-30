@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class spawnFish : MonoBehaviour
 {
-    private FishList list;
+    private FishDetails fD;
     private RectTransform rT;
     private float randomX;
     private float randomY;
@@ -15,7 +15,6 @@ public class spawnFish : MonoBehaviour
 
     private void Start()
     {
-        list = GameObject.FindWithTag("list").GetComponent<FishList>();
         rT = GetComponent<RectTransform>();
 
         canvasWidth = rT.rect.width;
@@ -23,12 +22,12 @@ public class spawnFish : MonoBehaviour
 
     }
 
-    public void spawn(int counter)
+    public void spawn(GameObject counter)
     {
         randomX = Random.Range(-canvasWidth / 2f, canvasWidth / 2f);
         randomY = Random.Range(-canvasHeight / 2f, canvasHeight / 2f);
 
-        GameObject newImage = Instantiate(list.counterSprites[counter], rT);
+        GameObject newImage = Instantiate(counter, rT);
 
         RectTransform imgRect = newImage.GetComponent<RectTransform>();
 

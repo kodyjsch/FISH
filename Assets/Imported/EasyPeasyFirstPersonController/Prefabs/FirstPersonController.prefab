@@ -435,6 +435,7 @@ MonoBehaviour:
   arms: {fileID: 5898109605475338331}
   swoosh: {fileID: 6453447799940852147}
   reel: {fileID: 3998566230880012326}
+  fD: {fileID: 0}
 --- !u!82 &3998566230880012326
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1104,7 +1105,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &9156347144824098803
 GameObject:
   m_ObjectHideFlags: 0

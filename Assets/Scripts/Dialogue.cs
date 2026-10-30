@@ -76,8 +76,11 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ExitDialogue()
+
+    private IEnumerator ExitDialogue()
     {
+        yield return null;
+
         isPlaying = false;
         DialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -94,7 +97,7 @@ public class DialogueManager : MonoBehaviour
             DisplayChoices();
         } else
         {
-            ExitDialogue();
+            StartCoroutine(ExitDialogue());
         }
     }
 

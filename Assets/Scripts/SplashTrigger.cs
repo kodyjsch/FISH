@@ -9,6 +9,7 @@ public class SplashTrigger : MonoBehaviour
     private FishReturn fRet;
     private FishList fList;
     private PlayerFishing plFish;
+    private FishDetails fD;
 
     public Image SplashSprite;
     public TextMeshProUGUI Name;
@@ -87,17 +88,19 @@ public class SplashTrigger : MonoBehaviour
         }
         else if (other.CompareTag("fish") && destroy == false)
         {
+            fList.fishCaught = fList.fishCaught + 1;
+            fD = other.GetComponent<FishDetails>();
             destroy = true;
             fRet = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
-            sF.spawn(fRet.chosenFish);
+            sF.spawn(fD.counter);
 
             if (fList.firstCatch[fRet.chosenFish] == false)
             {
                 aS.Play();
                 fList.firstCatch[fRet.chosenFish] = true;
-                SplashSprite.sprite = fList.splashSprites[fRet.chosenFish];
-                Name.text = fList.Names[fRet.chosenFish];
-                Zinger.text = fList.OneLiners[fRet.chosenFish];
+                SplashSprite.sprite = fD.splash;
+                Name.text = fD.fishName;
+                Zinger.text = fD.zinger;
                 screen.SetActive(true);
                 Destroy(bob);
 

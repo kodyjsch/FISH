@@ -22,6 +22,7 @@ public class FishReturn : MonoBehaviour
     public GameObject QTESys;
 
     public GameObject tut;
+    public tutorialText tT;
 
     public AudioSource splash;
     public bool inWater = false;
@@ -33,6 +34,8 @@ public class FishReturn : MonoBehaviour
     public static GameObject bobber;
 
     public GameObject manmer;
+
+    public FishDetails fD;
 
     private void Awake()
     {
@@ -47,8 +50,10 @@ public class FishReturn : MonoBehaviour
         pole = GameObject.FindWithTag("pole");
         rb = GetComponent<Rigidbody>();
         list = GameObject.FindWithTag("list").GetComponent<FishList>();
-        chosenFish = Random.Range(0, list.fishPrefabs.Count);
+        chosenFish = Random.Range(0, list.fishNumber);
+        fD = list.fishPrefabs[chosenFish].GetComponent<FishDetails>();
         tut = GameObject.FindWithTag("tutorial");
+        //tT = tut.GetComponent<tutorialText>();
         sR = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -60,7 +65,7 @@ public class FishReturn : MonoBehaviour
 
     IEnumerator fishDelayer()
     {
-        yield return new WaitForSeconds(Random.Range(5, 16));
+        yield return new WaitForSeconds(Random.Range(5, list.maxWait));
         fishSpawn();
     }
 
@@ -83,28 +88,30 @@ public class FishReturn : MonoBehaviour
         Instantiate(QTESys, transform.position, Quaternion.identity);
     }
 
-    private void FixedUpdate()
+    void Update()
     {
 
-        if(ret == true)
+        if (ret == true)
         {
-            if(sad == true)
+            if (sad == true)
             {
+                if(tT != null)
+                {
+                  tT.ready = true;
+                }
                 sR.sprite = wormSad;
             }
 
-            if(instance != null)
+            if (instance != null)
             {
                 Destroy(instance);
-            }            
+            }
 
             float step = speed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, pole.transform.position, step);
-           
-        }
 
-        
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -121,6 +128,7 @@ public class FishReturn : MonoBehaviour
 
         }
     }
+
 
 
 }

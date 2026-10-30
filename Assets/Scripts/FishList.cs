@@ -6,11 +6,26 @@ using UnityEngine.UI;
 public class FishList : MonoBehaviour
 {
     public List<GameObject> fishPrefabs;
-    public List<Sprite> splashSprites;
-    public List<GameObject> counterSprites;
-
     public List<bool> firstCatch;
-    public List<string> Names;
-    public List<string> OneLiners;
+
+
+    public float maxWait;
+    public float qteLength;
+    public int fishNumber;
+
+    public int day = 1;
+    public int fishCaught = 0;
+
+    private void Start()
+    {
+        maxWait = 16;
+        qteLength = 1.0f;
+        fishNumber = 14;
+    }
+
+    private void Update()
+    {
+        Debug.Log(fishCaught);
+    }
 
 }

@@ -14,8 +14,9 @@ public class QTEText : MonoBehaviour
     public int turnOrder;
 
     private QTESys qS;
+    private FishList fL;
 
-    public float duration = 1.0f;
+    public float duration;
 
     private IEnumerator timer;
 
@@ -35,6 +36,7 @@ public class QTEText : MonoBehaviour
     {
         target = Random.Range(0, letters.Count);
 
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
         TMP = GetComponent<TMP_Text>();
         TMP.SetText(letters[target]);
         TMP.color = start;
@@ -53,6 +55,34 @@ public class QTEText : MonoBehaviour
         {
             turnOrder = 2;
         }
+        else if (gameObject.CompareTag("four"))
+        {
+            turnOrder = 3;
+        }
+        else if (gameObject.CompareTag("five"))
+        {
+            turnOrder = 4;
+        }
+        else if (gameObject.CompareTag("six"))
+        {
+            turnOrder = 5;
+        }
+        else if (gameObject.CompareTag("seven"))
+        {
+            turnOrder = 6;
+        }
+        else if (gameObject.CompareTag("eight"))
+        {
+            turnOrder = 7;
+        }
+        else if (gameObject.CompareTag("nine"))
+        {
+            turnOrder = 8;
+        }
+        else if (gameObject.CompareTag("ten"))
+        {
+            turnOrder = 9;
+        }
 
 
         timer = TransitionColorRoutine();
@@ -62,6 +92,8 @@ public class QTEText : MonoBehaviour
 
     private void Update()
     {
+
+        duration = fL.qteLength;
 
         if (turnOrder == qS.QTETurn && tried == false)
         {

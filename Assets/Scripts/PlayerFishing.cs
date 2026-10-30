@@ -17,6 +17,8 @@ public class PlayerFishing : MonoBehaviour
     public AudioSource swoosh;
     public AudioSource reel;
 
+    public FishDetails fD;
+
 
     private void OnEnable()
     {
@@ -67,6 +69,7 @@ public class PlayerFishing : MonoBehaviour
                 if (fishReturn.fish == true && QTE == false)
                 {
                     QTE = true;
+                    fD = fishReturn.fD;
                     fishReturn.QTESpawn();
 
                 }

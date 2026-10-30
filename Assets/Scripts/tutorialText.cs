@@ -13,7 +13,7 @@ public class tutorialText : MonoBehaviour
     public GameObject txt;
 
     private FishReturn fR;
-    private bool ready = false;
+    public bool ready = false;
     private bool final = false;
 
     private void Start()
@@ -58,7 +58,6 @@ public class tutorialText : MonoBehaviour
         txt.SetActive(true);
         yield return new WaitForSeconds(5.0f);
         txt.SetActive(false);
-        Destroy(gameObject);
     }
 
     private void Update()

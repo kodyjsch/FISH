@@ -21,7 +21,7 @@ public class QTESys : MonoBehaviour
     public int QTENum;
     public int QTETurn;
 
-    string[] tagList = { "one", "two", "three" };
+    string[] tagList = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" };
 
 
     private void Awake()
@@ -29,7 +29,7 @@ public class QTESys : MonoBehaviour
         pF = GameObject.Find("Caster").GetComponent<PlayerFishing>();
         fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
 
-        num = Random.Range(1, 4);
+        num = Random.Range(pF.fD.minQTE, pF.fD.maxQTE);
 
         for (int i = 0; i < num; i++)
         {
