@@ -21,8 +21,6 @@ public class ShopTrigger : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            // player entered! Indicator will be set active!
-            Debug.Log("Entered!");
             floatingText.SetActive(true);
             inRange = true;
         }
@@ -33,15 +31,9 @@ public class ShopTrigger : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Exited!");
             floatingText.SetActive(false);
             inRange = false;
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log($"STAY: {other.name}", this);
     }
 
     private void Update()

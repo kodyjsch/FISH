@@ -27,20 +27,20 @@ public class ItemDetails : MonoBehaviour, ISelectHandler
     public void ButtonClick()
     {
 
-        if (fL.fishCaught < price)
-        {
-            Debug.Log("brokie");
-            return;            
-        }
-        else
-        {
-            fL.fishCaught = fL.fishCaught - price;
-
-        }
-
         if (bought == false)
         {
             shop.ButtonEffect(buttonIndex);
+
+            if (fL.fishCaught < price)
+            {
+                Debug.Log("brokie");
+                return;
+            }
+            else
+            {
+                fL.fishCaught = fL.fishCaught - price;
+                bought = true;
+            }
         }
     }
 

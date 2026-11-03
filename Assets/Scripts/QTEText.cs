@@ -95,7 +95,7 @@ public class QTEText : MonoBehaviour
 
         duration = fL.qteLength;
 
-        if (turnOrder == qS.QTETurn && tried == false)
+        if (turnOrder == qS.QTETurn && tried == false && qS.fail == false)
         {
             if (Input.GetKeyDown(keys[target]))
             {

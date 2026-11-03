@@ -40,7 +40,9 @@ public class SplashTrigger : MonoBehaviour
 
     private void Update()
     {
-        
+
+        Debug.Log("SplashTrigger");
+
         if (Input.GetMouseButtonDown(0))
         {
 

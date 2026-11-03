@@ -13,7 +13,7 @@ public class FishList : MonoBehaviour
     public float qteLength;
     public int fishNumber;
 
-    public int day = 1;
+    public bool day2 = true;
     public int fishCaught = 0;
 
     private void Start()
@@ -21,11 +21,6 @@ public class FishList : MonoBehaviour
         maxWait = 16;
         qteLength = 1.0f;
         fishNumber = 14;
-    }
-
-    private void Update()
-    {
-        Debug.Log(fishCaught);
     }
 
 }

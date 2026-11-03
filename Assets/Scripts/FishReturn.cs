@@ -53,7 +53,7 @@ public class FishReturn : MonoBehaviour
         chosenFish = Random.Range(0, list.fishNumber);
         fD = list.fishPrefabs[chosenFish].GetComponent<FishDetails>();
         tut = GameObject.FindWithTag("tutorial");
-        //tT = tut.GetComponent<tutorialText>();
+        tT = tut.GetComponent<tutorialText>();
         sR = GetComponentInChildren<SpriteRenderer>();
     }
 

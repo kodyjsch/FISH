@@ -8,10 +8,11 @@ public class QTESys : MonoBehaviour
 {
 
     public GameObject QTEText;
-    public float num;
+    public int num;
 
     public PlayerFishing pF;
     public FishReturn fR;
+    public GameObject tutorial;
 
     public List<bool> nums = new List<bool>();
 
@@ -28,8 +29,16 @@ public class QTESys : MonoBehaviour
     {
         pF = GameObject.Find("Caster").GetComponent<PlayerFishing>();
         fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
+        tutorial = GameObject.FindWithTag("tutorial");
 
-        num = Random.Range(pF.fD.minQTE, pF.fD.maxQTE);
+        if(tutorial != null)
+        {
+            num = 3;
+        } else
+        {
+            num = Random.Range(pF.fD.minQTE, pF.fD.maxQTE);
+        }
+            
 
         for (int i = 0; i < num; i++)
         {
