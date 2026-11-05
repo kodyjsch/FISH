@@ -8,6 +8,7 @@ using UnityEngine;
 public class tutorialText : MonoBehaviour
 {
     public List<string> TutorialLines;
+    private FishList fL;
 
     public TMP_Text tutText;
     public GameObject txt;
@@ -18,6 +19,13 @@ public class tutorialText : MonoBehaviour
 
     private void Start()
     {
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
+
+        if(fL.day2 == true)
+        {
+            Destroy(gameObject);
+        }
+
         StartCoroutine(started());
     }
 

@@ -5,12 +5,12 @@ using UnityEngine;
 public class KYS : MonoBehaviour
 {
     [SerializeField] private TextAsset Manmer;
-    [SerializeField] private GameObject tutorial;
+    private GameObject tutorial;
 
-
-    private void OnAwake()
+    private void Start()
     {
-        tutorial.SetActive(false);
+        tutorial = GameObject.FindWithTag("tutorial");
+        Destroy(tutorial);
     }
 
     void Update()

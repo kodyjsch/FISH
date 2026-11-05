@@ -29,8 +29,6 @@ public class ItemDetails : MonoBehaviour, ISelectHandler
 
         if (bought == false)
         {
-            shop.ButtonEffect(buttonIndex);
-
             if (fL.fishCaught < price)
             {
                 Debug.Log("brokie");
@@ -38,6 +36,7 @@ public class ItemDetails : MonoBehaviour, ISelectHandler
             }
             else
             {
+                shop.ButtonEffect(buttonIndex);
                 fL.fishCaught = fL.fishCaught - price;
                 bought = true;
             }

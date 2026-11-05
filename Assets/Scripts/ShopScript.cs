@@ -13,6 +13,8 @@ public class ShopScript : MonoBehaviour
     private PauseMenu pM;
     private FishList fL;
 
+    private static GameObject shop;
+
     [SerializeField] private TextMeshProUGUI currency;
 
     private bool butt0 = false;
@@ -21,6 +23,15 @@ public class ShopScript : MonoBehaviour
 
     private void Start()
     {
+        if(shop != null)
+        {
+            Destroy(gameObject);
+        } else
+        {
+            shop = gameObject;
+        }
+
+        DontDestroyOnLoad(gameObject);
 
         pM = GameObject.FindWithTag("list").GetComponent<PauseMenu>();
         fL = GameObject.FindWithTag("list").GetComponent<FishList>();
@@ -92,13 +103,13 @@ public class ShopScript : MonoBehaviour
         {
             exes[butt].SetActive(true);
             butt2 = true;
-            fL.qteLength = 1.5f;
+            fL.qteLength = 3f;
         }
 
         if (butt == 3)
         {
             exes[butt].SetActive(true);
-            fL.qteLength = 2f;            
+            fL.qteLength = 4.5f;            
         }
 
         if (butt == 4)

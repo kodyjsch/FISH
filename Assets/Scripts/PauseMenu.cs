@@ -5,14 +5,18 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
-    [SerializeField] private GameObject caster;
-
+    private GameObject caster;
 
     public bool isPaused = false;
     public bool dialogue = false;
 
     void Update()
     {
+        if(caster == null)
+        {
+            caster = GameObject.FindWithTag("caster");
+        }
+
 
         if(dialogue == true)
         {

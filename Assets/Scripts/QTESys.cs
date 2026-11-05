@@ -22,6 +22,9 @@ public class QTESys : MonoBehaviour
     public int QTENum;
     public int QTETurn;
 
+    public bool TimeOut = false;
+    public AudioSource oOT;
+
     string[] tagList = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" };
 
 
@@ -54,10 +57,10 @@ public class QTESys : MonoBehaviour
     private void Update()
     {
 
-
         if (fail == true)
         {
             StartCoroutine(failed());
+            
         }
         else if (correct == QTENum)
         {

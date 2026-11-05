@@ -53,7 +53,10 @@ public class FishReturn : MonoBehaviour
         chosenFish = Random.Range(0, list.fishNumber);
         fD = list.fishPrefabs[chosenFish].GetComponent<FishDetails>();
         tut = GameObject.FindWithTag("tutorial");
-        tT = tut.GetComponent<tutorialText>();
+        if(tut != null)
+        {
+           tT = tut.GetComponent<tutorialText>();
+        } 
         sR = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -99,18 +102,24 @@ public class FishReturn : MonoBehaviour
                 {
                   tT.ready = true;
                 }
+
                 sR.sprite = wormSad;
             }
 
-            if (instance != null)
-            {
-                Destroy(instance);
-            }
+            KillBubbles();
 
             float step = speed * Time.deltaTime;
 
             transform.position = Vector3.MoveTowards(transform.position, pole.transform.position, step);
 
+        }
+    }
+
+    public void KillBubbles()
+    {
+        if (instance != null)
+        {
+            Destroy(instance);
         }
     }
 

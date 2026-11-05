@@ -15,6 +15,7 @@ public class QTEText : MonoBehaviour
 
     private QTESys qS;
     private FishList fL;
+    private FishReturn fR;
 
     public float duration;
 
@@ -37,6 +38,7 @@ public class QTEText : MonoBehaviour
         target = Random.Range(0, letters.Count);
 
         fL = GameObject.FindWithTag("list").GetComponent<FishList>();
+        fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
         TMP = GetComponent<TMP_Text>();
         TMP.SetText(letters[target]);
         TMP.color = start;
@@ -99,6 +101,7 @@ public class QTEText : MonoBehaviour
         {
             if (Input.GetKeyDown(keys[target]))
             {
+                tried = true;
                 good.Play();
                 StopCoroutine(timer);
                 TMP.color = win;
@@ -121,7 +124,7 @@ public class QTEText : MonoBehaviour
 
     IEnumerator updateOrder()
     {
-        yield return null;
+        yield return new WaitForEndOfFrame();
         qS.QTETurn++;
     }
 
@@ -134,6 +137,9 @@ public class QTEText : MonoBehaviour
         TMP.color = end;
         yield return new WaitForSeconds(duration / 3);
         TMP.color = lose;
+        fR.KillBubbles();
+        qS.oOT.Play();
+        qS.TimeOut = true;
         qS.fail = true;
 
     }
