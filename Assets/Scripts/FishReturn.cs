@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class FishReturn : MonoBehaviour
@@ -33,9 +34,8 @@ public class FishReturn : MonoBehaviour
 
     public static GameObject bobber;
 
-    public GameObject manmer;
-
     public FishDetails fD;
+    private GameObject boss;
 
     private void Awake()
     {
@@ -56,7 +56,8 @@ public class FishReturn : MonoBehaviour
         if(tut != null)
         {
            tT = tut.GetComponent<tutorialText>();
-        } 
+        }
+        boss = GameObject.FindWithTag("boss");
         sR = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -68,7 +69,7 @@ public class FishReturn : MonoBehaviour
 
     IEnumerator fishDelayer()
     {
-        yield return new WaitForSeconds(Random.Range(5, list.maxWait));
+        yield return new WaitForSeconds(Random.Range(3, list.maxWait));
         fishSpawn();
     }
 
@@ -76,12 +77,12 @@ public class FishReturn : MonoBehaviour
     {
         ret = true;
 
-        if(tut == null)
+        if(tut == null && boss == null)
         {
             GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
         } else
         {
-            GameObject childObj = Instantiate(manmer, transform);
+            GameObject childObj = Instantiate(list.dialogueSprite, transform);
         }
         
     }

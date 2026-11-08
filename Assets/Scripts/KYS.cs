@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KYS : MonoBehaviour
 {
-    [SerializeField] private TextAsset Manmer;
+    [SerializeField] private TextAsset dia;
     private GameObject tutorial;
 
     private void Start()
@@ -18,7 +18,7 @@ public class KYS : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Destroy(gameObject);
-            DialogueManager.GetInstance().EnterDialogue(Manmer);
+            DialogueManager.GetInstance().EnterDialogue(dia);
         }
     }
 }

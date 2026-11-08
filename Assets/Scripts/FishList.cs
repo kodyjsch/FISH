@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class FishList : MonoBehaviour
 {
+    public Rigidbody rb;
+
+    public Rigidbody puffer;
+    public Rigidbody disco;
+
     public List<GameObject> fishPrefabs;
     public List<bool> firstCatch;
 
@@ -16,6 +21,15 @@ public class FishList : MonoBehaviour
 
     public bool day2 = false;
     public int fishCaught = 0;
+
+    public GameObject dialogueSprite;
+    public GameObject dialogueSplash;
+
+    public GameObject manmer;
+    public GameObject merman;
+
+    public GameObject manmerSplash;
+    public GameObject mermanSplash;
 
     private void Start()
     {
@@ -29,8 +43,11 @@ public class FishList : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        dialogueSprite = manmer;
+        dialogueSplash = manmerSplash;
+
         maxWait = 16;
-        qteLength = 1.5f;
+        qteLength = 2f;
         fishNumber = 14;
     }
 

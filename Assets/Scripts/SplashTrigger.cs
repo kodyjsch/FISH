@@ -28,7 +28,6 @@ public class SplashTrigger : MonoBehaviour
     private GameObject bob;
     private FishReturn fR;
 
-    public GameObject manmer;
     private bool mA = false;
 
     private void Start()
@@ -82,7 +81,7 @@ public class SplashTrigger : MonoBehaviour
 
         if (other.CompareTag("Manmer"))
         {
-            Instantiate(manmer);
+            Instantiate(fList.dialogueSplash);
             mA = true;
             Destroy(bob);
         }
@@ -109,7 +108,7 @@ public class SplashTrigger : MonoBehaviour
                 StartCoroutine(killFish());
             }
                         
-        } else if (destroy == false && fR.sad == true)
+        } else if (destroy == false && fR.sad == true && fR.ret == true)
         {
             destroy = true;
             StartCoroutine(killFish());
@@ -119,6 +118,7 @@ public class SplashTrigger : MonoBehaviour
 
     IEnumerator killFish()
     {
+        Debug.Log("KILLED!");
         yield return new WaitForSeconds(2.5f);
         Destroy(bob);
         if (plFish.reel.isPlaying)

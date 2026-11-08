@@ -52,10 +52,28 @@ public class DialogueManager : MonoBehaviour
     private void Update()
     {
 
+        if (DialoguePanel == null)
+        {
+            DialoguePanel = GameObject.FindWithTag("dialogue");
+            dialogueText = GameObject.FindWithTag("text").GetComponent<TextMeshProUGUI>();
+
+            choices[0] = GameObject.FindWithTag("c1");
+            choices[1] = GameObject.FindWithTag("c2");
+            choices[2] = GameObject.FindWithTag("c3");
+
+            int index = 0;
+            foreach (GameObject choice in choices)
+            {
+
+                choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+                index++;
+            }
+        }
+
         if (!isPlaying)
         {
             return;
-        }
+        }        
 
         if (Input.GetButtonDown("Submit"))
         {

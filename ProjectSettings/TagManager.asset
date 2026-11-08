@@ -27,6 +27,13 @@ TagManager:
   - ten
   - shop
   - caster
+  - cube
+  - dialogue
+  - text
+  - c1
+  - c2
+  - c3
+  - boss
   layers:
   - Default
   - TransparentFX

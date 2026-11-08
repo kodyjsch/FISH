@@ -90,26 +90,28 @@ public class ShopScript : MonoBehaviour
         {
             exes[butt].SetActive(true);
             butt0 = true;
-            fL.maxWait = 12;
+            fL.maxWait = 11;
         }
 
         if(butt == 1)
         {
             exes[butt].SetActive(true);
-            fL.maxWait = 8;
+            fL.maxWait = 6;
         }
 
         if (butt == 2)
         {
             exes[butt].SetActive(true);
             butt2 = true;
-            fL.qteLength = 3f;
+            fL.qteLength = 4f;
+            fL.rb = fL.puffer;
         }
 
         if (butt == 3)
         {
             exes[butt].SetActive(true);
-            fL.qteLength = 4.5f;            
+            fL.qteLength = 6f;
+            fL.rb = fL.disco;
         }
 
         if (butt == 4)

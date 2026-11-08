@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlayerFishing : MonoBehaviour
 {
-    public Rigidbody rb;
     public float speed = 4;
     public bool QTE = false;
     public bool casted = false;
     public bool failed = false;
     private GameObject bobber;
     private FishReturn fishReturn;
+    private FishList fL;
 
     public Animator arms;
     public AudioSource swoosh;
@@ -19,6 +19,10 @@ public class PlayerFishing : MonoBehaviour
 
     public FishDetails fD;
 
+    private void Start()
+    {
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
+    }
 
     private void OnEnable()
     {
@@ -46,7 +50,7 @@ public class PlayerFishing : MonoBehaviour
             arms.SetTrigger("Cast");
             yield return new WaitForSeconds(0.8f);
             swoosh.Play();
-            Rigidbody cast = Instantiate(rb, transform.position, transform.rotation);
+            Rigidbody cast = Instantiate(fL.rb, transform.position, transform.rotation);
             cast.velocity = transform.forward * speed;
             bobber = GameObject.FindWithTag("bobber");
             fishReturn = bobber.GetComponent<FishReturn>(); 

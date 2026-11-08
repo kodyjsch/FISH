@@ -8,6 +8,7 @@ public class ShopTrigger : MonoBehaviour
     [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject floatingText;
     private PauseMenu pM;
+    private GameObject caster;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class ShopTrigger : MonoBehaviour
         {
             floatingText.SetActive(true);
             inRange = true;
+            caster.SetActive(false);
         }
     }
 
@@ -33,11 +35,17 @@ public class ShopTrigger : MonoBehaviour
         {
             floatingText.SetActive(false);
             inRange = false;
+            caster.SetActive(true);
         }
     }
 
     private void Update()
     {
+        if(caster == null)
+        {
+            caster = GameObject.FindWithTag("caster");
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Return) && inRange == true)
         {

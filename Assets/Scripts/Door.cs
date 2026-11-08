@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject textCanvas;
     [SerializeField] private TextMeshProUGUI fishText;
     private FishList fL;
+    private GameObject shop;
 
     private bool inside = false;
     private bool enough = false;
@@ -16,6 +17,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         fL = GameObject.FindWithTag("list").GetComponent<FishList>();
+        shop = GameObject.FindWithTag("cube");
     }
 
     // Update is called once per frame
@@ -40,6 +42,9 @@ public class Door : MonoBehaviour
                 SceneManager.LoadScene("Transition");
             } else
             {
+                Destroy(shop);
+                fL.dialogueSprite = fL.merman;
+                fL.dialogueSplash = fL.mermanSplash;
                 Debug.Log("Transition to Boss Fight");
             }            
         }

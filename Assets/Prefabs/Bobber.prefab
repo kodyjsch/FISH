@@ -234,7 +234,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -265,7 +265,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 4
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -306,12 +306,14 @@ MonoBehaviour:
   bubble: {fileID: 7419847244147993030, guid: f1a89996896b5a64e930b57ab9e56965, type: 3}
   QTESys: {fileID: 2865849197200425273, guid: 3dc48277aa4902742b35f889ef547ac0, type: 3}
   tut: {fileID: 0}
+  tT: {fileID: 0}
   splash: {fileID: 6574968700007450103}
   inWater: 0
   sad: 0
   wormSad: {fileID: 21300000, guid: ffde2c5796861a449abec66084f5296b, type: 3}
   sR: {fileID: 0}
   manmer: {fileID: 3000399781586666295, guid: a6a2ba0b8d419764c8e0693e74444a63, type: 3}
+  fD: {fileID: 0}
 --- !u!82 &6574968700007450103
 AudioSource:
   m_ObjectHideFlags: 0

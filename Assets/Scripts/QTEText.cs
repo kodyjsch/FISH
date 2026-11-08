@@ -19,7 +19,7 @@ public class QTEText : MonoBehaviour
 
     public float duration;
 
-    private IEnumerator timer;
+    private Coroutine timer = null;
 
     public Color start;
     public Color mid;
@@ -87,8 +87,7 @@ public class QTEText : MonoBehaviour
         }
 
 
-        timer = TransitionColorRoutine();
-        StartCoroutine(timer);
+        timer = StartCoroutine(TransitionColorRoutine());
 
     }
 
@@ -108,7 +107,7 @@ public class QTEText : MonoBehaviour
                 qS.correct++;
                 StartCoroutine(updateOrder());
             }
-            else if (Input.anyKeyDown && !Input.GetKeyDown(keys[target]))
+            else if (Input.anyKeyDown && !Input.GetKeyDown(keys[target]) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
             {
                 bad.Play();
                 tried = true;
