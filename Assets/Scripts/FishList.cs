@@ -31,6 +31,12 @@ public class FishList : MonoBehaviour
     public GameObject manmerSplash;
     public GameObject mermanSplash;
 
+    public bool trigger = false;
+    public bool bossDialogue = true;
+
+    private GameObject bossTrigger;
+    private GameObject bossMechanics;
+
     private void Start()
     {
         if(list != null)
@@ -49,6 +55,35 @@ public class FishList : MonoBehaviour
         maxWait = 16;
         qteLength = 2f;
         fishNumber = 14;
+    }
+
+    private void Update()
+    {
+        if(trigger == true)
+        {
+            if(day2 == false)
+            {
+
+            } else if (day2 == true)
+            {
+                bossDialogue = false;
+            }
+
+            trigger = false;
+        }
+
+        if(bossDialogue == false)
+        {
+            if(bossTrigger == null)
+            {
+                bossTrigger = GameObject.FindWithTag("boss");
+                bossMechanics = GameObject.FindWithTag("mech");
+                bossTrigger.SetActive(false);
+                bossMechanics.SetActive(true);
+            }                     
+
+        }
+
     }
 
 }

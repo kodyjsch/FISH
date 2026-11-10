@@ -116,7 +116,7 @@ public class ShopScript : MonoBehaviour
 
         if (butt == 4)
         {
-            fL.fishNumber = fL.fishNumber + 12;
+            fL.fishNumber = fL.fishNumber + 13;
             butt4 = true;
             exes[butt].SetActive(true);
         }

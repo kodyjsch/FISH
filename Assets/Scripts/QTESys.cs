@@ -27,8 +27,10 @@ public class QTESys : MonoBehaviour
 
     string[] tagList = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" };
 
+    private BossMechanics bM;
 
-    private void Awake()
+
+    private void Start()
     {
         pF = GameObject.Find("Caster").GetComponent<PlayerFishing>();
         fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
@@ -51,6 +53,8 @@ public class QTESys : MonoBehaviour
         }
 
         QTENum = nums.Count;
+
+        bM = GameObject.FindWithTag("mech").GetComponent<BossMechanics>();
 
     }
 
@@ -75,6 +79,10 @@ public class QTESys : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         fR.sad = true;
         fR.ret = true;
+        if(bM != null)
+        {
+           bM.LoseALife();
+        }
         Destroy(gameObject);
     }
 

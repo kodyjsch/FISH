@@ -118,7 +118,6 @@ public class SplashTrigger : MonoBehaviour
 
     IEnumerator killFish()
     {
-        Debug.Log("KILLED!");
         yield return new WaitForSeconds(2.5f);
         Destroy(bob);
         if (plFish.reel.isPlaying)
