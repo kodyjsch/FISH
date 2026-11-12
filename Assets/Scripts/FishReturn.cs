@@ -10,8 +10,8 @@ public class FishReturn : MonoBehaviour
     private Rigidbody rb;
     public float speed = 10;
 
-    public bool ret = false;
-    public bool fish = false;
+    public bool ret;
+    public bool fish;
 
     private FishList list;
 
@@ -28,17 +28,21 @@ public class FishReturn : MonoBehaviour
     public AudioSource splash;
     public bool inWater = false;
 
-    public bool sad = false;
+    public bool sad;
     public Sprite wormSad;
     public SpriteRenderer sR;
 
     public static GameObject bobber;
 
     public FishDetails fD;
-    private GameObject boss;
+    public GameObject boss;
 
-    private void Awake()
+    private void Start()
     {
+        ret = false;
+        fish = false;
+        sad = false;
+
         if(bobber != null)
         {
             Destroy(gameObject);
@@ -79,9 +83,11 @@ public class FishReturn : MonoBehaviour
 
         if(tut == null && boss == null)
         {
+            Debug.Log("non-specific fish");
             GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
         } else
         {
+            Debug.Log("merman or manmer");
             GameObject childObj = Instantiate(list.dialogueSprite, transform);
         }
         

@@ -873,7 +873,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1583695758}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1583695758}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -4561,7 +4561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1359288428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4950,6 +4950,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019820997605063073, guid: a88e9fa2745322744bb456a95c6d7aa6,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 8089089133140127596}
+    - target: {fileID: 4019820997605063073, guid: a88e9fa2745322744bb456a95c6d7aa6,
+        type: 3}
+      propertyPath: DialoguePanel
+      value: 
+      objectReference: {fileID: 3203967229058471178}
+    - target: {fileID: 4019820997605063073, guid: a88e9fa2745322744bb456a95c6d7aa6,
+        type: 3}
+      propertyPath: choices.Array.data[0]
+      value: 
+      objectReference: {fileID: 305744267}
+    - target: {fileID: 4019820997605063073, guid: a88e9fa2745322744bb456a95c6d7aa6,
+        type: 3}
+      propertyPath: choices.Array.data[1]
+      value: 
+      objectReference: {fileID: 290346209}
+    - target: {fileID: 4019820997605063073, guid: a88e9fa2745322744bb456a95c6d7aa6,
+        type: 3}
+      propertyPath: choices.Array.data[2]
+      value: 
+      objectReference: {fileID: 1703654006}
     - target: {fileID: 8179484569045814455, guid: a88e9fa2745322744bb456a95c6d7aa6,
         type: 3}
       propertyPath: m_Name
@@ -5616,6 +5641,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6, y: 1.5, z: 6}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &1583695758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4019820997605063073, guid: a88e9fa2745322744bb456a95c6d7aa6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1398857920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd5a497fefcea44eae2ae9a219972fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1596427140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6277,7 +6314,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1583695758}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -7844,7 +7881,7 @@ GameObject:
   - component: {fileID: 3648093515653553169}
   m_Layer: 5
   m_Name: ManmerDialogue
-  m_TagString: Untagged
+  m_TagString: dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8300,7 +8337,7 @@ GameObject:
   - component: {fileID: 8089089133140127596}
   m_Layer: 5
   m_Name: Dialogue
-  m_TagString: Untagged
+  m_TagString: text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

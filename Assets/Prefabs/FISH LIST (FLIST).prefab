@@ -404,16 +404,20 @@ MonoBehaviour:
   maxWait: 0
   qteLength: 0
   fishNumber: 0
-  day2: 0
+  day2: 1
   fishCaught: 0
-  dialogueSprite: {fileID: 0}
-  dialogueSplash: {fileID: 0}
+  dialogueSprite: {fileID: 3000399781586666295, guid: 525d130b2e92ecb4d876adf868152119,
+    type: 3}
+  dialogueSplash: {fileID: 8706297095051568248, guid: e25f06df79fb67e4baca03788f17f6fd,
+    type: 3}
   manmer: {fileID: 3000399781586666295, guid: a6a2ba0b8d419764c8e0693e74444a63, type: 3}
   merman: {fileID: 3000399781586666295, guid: 525d130b2e92ecb4d876adf868152119, type: 3}
   manmerSplash: {fileID: 8706297095051568248, guid: bc44be97763f1f949ba05bb639dc553a,
     type: 3}
   mermanSplash: {fileID: 8706297095051568248, guid: e25f06df79fb67e4baca03788f17f6fd,
     type: 3}
+  trigger: 0
+  bossDialogue: 0
 --- !u!114 &7308831195737702316
 MonoBehaviour:
   m_ObjectHideFlags: 0

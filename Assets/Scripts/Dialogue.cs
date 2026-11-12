@@ -14,11 +14,13 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    private Button[] butts;
     private TextMeshProUGUI[] choicesText;
 
     private Story CurrentStory;
 
     private PauseMenu pM;
+    private FishList fL;
     private bool isPlaying;
     private static DialogueManager instance;
 
@@ -35,6 +37,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         pM = GameObject.FindWithTag("list").GetComponent<PauseMenu>();
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
         isPlaying = false;
         DialoguePanel.SetActive(false);
 
@@ -64,9 +67,22 @@ public class DialogueManager : MonoBehaviour
             int index = 0;
             foreach (GameObject choice in choices)
             {
-
                 choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
                 index++;
+            }
+
+            int index1 = 0;
+            foreach (GameObject choice in choices)
+            {
+                butts[index1] = choice.GetComponent<Button>();
+                index1++;
+            }
+
+            int index2 = 0;
+            foreach (Button butt in butts)
+            {
+                butts[index2].onClick.AddListener(() => MakeChoice(index2));
+                index2++;
             }
         }
 
@@ -105,6 +121,8 @@ public class DialogueManager : MonoBehaviour
 
         pM.Resume();
         pM.dialogue = false;
+
+        fL.trigger = true;
     }
 
     private void ContinueStory()

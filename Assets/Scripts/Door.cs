@@ -45,6 +45,7 @@ public class Door : MonoBehaviour
                 Destroy(shop);
                 fL.dialogueSprite = fL.merman;
                 fL.dialogueSplash = fL.mermanSplash;
+                fL.fishCaught = 0;
                 Debug.Log("Transition to Boss Fight");
             }            
         }

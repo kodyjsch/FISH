@@ -4,23 +4,29 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class BossMechanics : MonoBehaviour
 {
-    [SerializeField] private float timeLeft = 60f;
+    [SerializeField] private float timeLeft = 61f;
     [SerializeField] private TextMeshProUGUI UItimer;
+    [SerializeField] private TextMeshProUGUI fishCount;
     public GameObject[] fullHearts;
     public GameObject[] brokenHearts;
     private int lifeLeft = 0;
 
+    private FishList fL;
+
     private void Start()
     {
-
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
     }
 
     private void Update()
     {
-        if (timeLeft > 0)
+        fishCount.text = (fL.fishCaught + "/5");
+
+        if (timeLeft > 1)
         {
             timeLeft -= Time.deltaTime;
             UItimer.text = Mathf.Floor(timeLeft).ToString();
@@ -32,6 +38,11 @@ public class BossMechanics : MonoBehaviour
         if(lifeLeft == 4)
         {
             StartCoroutine(LoseGame());
+        }
+
+        if(fL.fishCaught == 5)
+        {
+            StartCoroutine(WinGame());
         }
     }
 
@@ -46,8 +57,18 @@ public class BossMechanics : MonoBehaviour
     {
         GameObject caster = GameObject.FindWithTag("caster");
         caster.SetActive(false);
-        yield return new WaitForSeconds(3.0f);        
-        Debug.Log("END SCREEN TRANSITION!!");
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("Game Over");
     }
+
+    IEnumerator WinGame()
+    {
+        GameObject caster = GameObject.FindWithTag("caster");
+        caster.SetActive(false);
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("WIN TRANSITION!!");
+    }
+
+
 
 }

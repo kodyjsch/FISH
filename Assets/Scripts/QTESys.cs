@@ -12,7 +12,8 @@ public class QTESys : MonoBehaviour
 
     public PlayerFishing pF;
     public FishReturn fR;
-    public GameObject tutorial;
+    private GameObject tutorial;
+    private GameObject boss;
 
     public List<bool> nums = new List<bool>();
 
@@ -35,8 +36,9 @@ public class QTESys : MonoBehaviour
         pF = GameObject.Find("Caster").GetComponent<PlayerFishing>();
         fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
         tutorial = GameObject.FindWithTag("tutorial");
+        boss = GameObject.FindWithTag("boss");
 
-        if(tutorial != null)
+        if(tutorial != null || boss != null)
         {
             num = 3;
         } else

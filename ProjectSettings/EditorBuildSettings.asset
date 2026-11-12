@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: e1053cb6567b74046920425e97bc3bf0
+  - enabled: 1
+    path: Assets/Scenes/BOSS.unity
+    guid: ff79f80568a12c64987e4af9c2d741be
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 5f184de0392b6cd44a71a84c1f63ef97
   m_configObjects: {}

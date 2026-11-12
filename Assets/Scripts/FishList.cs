@@ -32,10 +32,12 @@ public class FishList : MonoBehaviour
     public GameObject mermanSplash;
 
     public bool trigger = false;
-    public bool bossDialogue = true;
+    public bool bossDialogue;
 
     private GameObject bossTrigger;
     private GameObject bossMechanics;
+
+    private MechFinder mF;
 
     private void Start()
     {
@@ -51,6 +53,8 @@ public class FishList : MonoBehaviour
 
         dialogueSprite = manmer;
         dialogueSplash = manmerSplash;
+
+        bossDialogue = true;
 
         maxWait = 16;
         qteLength = 2f;
@@ -74,16 +78,22 @@ public class FishList : MonoBehaviour
 
         if(bossDialogue == false)
         {
-            if(bossTrigger == null)
-            {
-                bossTrigger = GameObject.FindWithTag("boss");
-                bossMechanics = GameObject.FindWithTag("mech");
-                bossTrigger.SetActive(false);
-                bossMechanics.SetActive(true);
-            }                     
-
+            SetObjects();
         }
 
+    }
+
+    private void SetObjects()
+    {
+        if (bossTrigger == null)
+        {
+            bossTrigger = GameObject.FindWithTag("boss");
+            mF = GameObject.Find("BossManager").GetComponent<MechFinder>();
+            bossMechanics = mF.BossMech;
+
+            bossTrigger.SetActive(false);
+            bossMechanics.SetActive(true);
+        }
     }
 
 }
