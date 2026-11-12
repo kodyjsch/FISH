@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c04d4d9c7cb16842860de315dc2883b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 61
+  timeLeft: 91
   UItimer: {fileID: 2028516956}
   fishCount: {fileID: 675254168}
   fullHearts:

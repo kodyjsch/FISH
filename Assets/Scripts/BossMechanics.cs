@@ -8,12 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class BossMechanics : MonoBehaviour
 {
-    [SerializeField] private float timeLeft = 61f;
+    [SerializeField] private float timeLeft = 91f;
     [SerializeField] private TextMeshProUGUI UItimer;
     [SerializeField] private TextMeshProUGUI fishCount;
     public GameObject[] fullHearts;
     public GameObject[] brokenHearts;
     private int lifeLeft = 0;
+    private bool won;
 
     private FishList fL;
 
@@ -24,12 +25,25 @@ public class BossMechanics : MonoBehaviour
 
     private void Update()
     {
+        if (won == true)
+            return;
+
         fishCount.text = (fL.fishCaught + "/5");
+
+        if (fL.fishCaught == 5)
+        {
+            StartCoroutine(WinGame());
+            won = true;
+            return;
+        }
 
         if (timeLeft > 1)
         {
             timeLeft -= Time.deltaTime;
-            UItimer.text = Mathf.Floor(timeLeft).ToString();
+            float minutes = Mathf.FloorToInt(timeLeft / 60);
+            float seconds = Mathf.FloorToInt(timeLeft % 60);
+
+            UItimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         } else
         {
             StartCoroutine(LoseGame());
@@ -40,10 +54,7 @@ public class BossMechanics : MonoBehaviour
             StartCoroutine(LoseGame());
         }
 
-        if(fL.fishCaught == 5)
-        {
-            StartCoroutine(WinGame());
-        }
+        
     }
 
     public void LoseALife()
