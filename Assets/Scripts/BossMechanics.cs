@@ -49,7 +49,7 @@ public class BossMechanics : MonoBehaviour
             StartCoroutine(LoseGame());
         }
 
-        if(lifeLeft == 4)
+        if(lifeLeft == 3)
         {
             StartCoroutine(LoseGame());
         }
@@ -77,7 +77,7 @@ public class BossMechanics : MonoBehaviour
         GameObject caster = GameObject.FindWithTag("caster");
         caster.SetActive(false);
         yield return new WaitForSeconds(3.0f);
-        Debug.Log("WIN TRANSITION!!");
+        SceneManager.LoadScene("Win");
     }
 
 

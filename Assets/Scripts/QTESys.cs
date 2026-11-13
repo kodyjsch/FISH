@@ -28,6 +28,7 @@ public class QTESys : MonoBehaviour
 
     string[] tagList = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" };
 
+    private GameObject mech;
     private BossMechanics bM;
 
 
@@ -37,8 +38,13 @@ public class QTESys : MonoBehaviour
         fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
         tutorial = GameObject.FindWithTag("tutorial");
         boss = GameObject.FindWithTag("boss");
+        mech = GameObject.FindWithTag("mech");
+        if(mech != null)
+        {
+            bM = mech.GetComponent<BossMechanics>();
+        }
 
-        if(tutorial != null || boss != null)
+        if (tutorial != null || boss != null)
         {
             num = 3;
         } else
@@ -55,9 +61,6 @@ public class QTESys : MonoBehaviour
         }
 
         QTENum = nums.Count;
-
-        bM = GameObject.FindWithTag("mech").GetComponent<BossMechanics>();
-
     }
 
     private void Update()

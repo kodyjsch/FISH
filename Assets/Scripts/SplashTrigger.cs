@@ -24,6 +24,7 @@ public class SplashTrigger : MonoBehaviour
     public AudioSource aS;
 
     public Animator arms;
+    public Animator splash;
 
     private GameObject bob;
 

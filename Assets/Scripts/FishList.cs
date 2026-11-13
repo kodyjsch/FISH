@@ -19,7 +19,7 @@ public class FishList : MonoBehaviour
     public float qteLength;
     public int fishNumber;
 
-    public bool day2 = false;
+    public bool day2;
     public int fishCaught = 0;
 
     public GameObject dialogueSprite;
@@ -51,14 +51,14 @@ public class FishList : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        dialogueSprite = manmer;
-        dialogueSplash = manmerSplash;
+        //dialogueSprite = manmer;
+        //dialogueSplash = manmerSplash;
 
         bossDialogue = true;
 
-        maxWait = 16;
-        qteLength = 2f;
-        fishNumber = 14;
+        //maxWait = 16;
+        //qteLength = 2f;
+        //fishNumber = 14;
     }
 
     private void Update()

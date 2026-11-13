@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class FishReturn : MonoBehaviour
@@ -83,11 +82,9 @@ public class FishReturn : MonoBehaviour
 
         if(tut == null && boss == null)
         {
-            Debug.Log("non-specific fish");
             GameObject childObj = Instantiate(list.fishPrefabs[chosenFish], transform);
         } else
-        {
-            Debug.Log("merman or manmer");
+        { 
             GameObject childObj = Instantiate(list.dialogueSprite, transform);
         }
         
