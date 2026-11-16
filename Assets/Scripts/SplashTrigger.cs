@@ -30,11 +30,15 @@ public class SplashTrigger : MonoBehaviour
 
     private bool mA = false;
 
+    private bool evilBug;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
         plFish = GameObject.Find("Caster").GetComponent<PlayerFishing>();
         sF = counter.GetComponent<spawnFish>();
+
+        evilBug = true;
     }
 
     private void Update()
@@ -68,7 +72,11 @@ public class SplashTrigger : MonoBehaviour
 
         if(bob != null)
         {
+            evilBug = false;
             fRet = bob.GetComponent<FishReturn>();
+        } else
+        {
+            evilBug = true;
         }
 
     }
@@ -109,10 +117,13 @@ public class SplashTrigger : MonoBehaviour
                 StartCoroutine(killFish());
             }
                         
-        } else if (destroy == false && fRet.sad == true)
+        } else if (destroy == false && evilBug == false)
         {
-            destroy = true;
-            StartCoroutine(killFish());
+            if(fRet.sad == true)
+            {
+                destroy = true;
+                StartCoroutine(killFish());
+            }
         }
 
     }

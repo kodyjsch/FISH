@@ -31,6 +31,9 @@ public class QTESys : MonoBehaviour
     private GameObject mech;
     private BossMechanics bM;
 
+    [SerializeField] private Animator QTE;
+    [SerializeField] private GameObject holder;
+
 
     private void Start()
     {
@@ -81,6 +84,7 @@ public class QTESys : MonoBehaviour
 
     IEnumerator failed()
     {
+        QTE.SetTrigger("Fail");
         yield return new WaitForSeconds(1.5f);
         fR.sad = true;
         fR.ret = true;
@@ -88,14 +92,15 @@ public class QTESys : MonoBehaviour
         {
            bM.LoseALife();
         }
-        Destroy(gameObject);
+        Destroy(holder);
     }
 
     IEnumerator succeeded()
     {
+        QTE.SetTrigger("Win");
         yield return new WaitForSeconds(1.5f);
         fR.LineReturn();
-        Destroy(gameObject);
+        Destroy(holder);
     }
 
 }

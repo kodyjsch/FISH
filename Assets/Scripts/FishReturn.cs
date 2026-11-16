@@ -7,7 +7,7 @@ public class FishReturn : MonoBehaviour
 {
     private GameObject pole;
     private Rigidbody rb;
-    public float speed = 10;
+    public float speed = 20;
 
     public bool ret;
     public bool fish;
