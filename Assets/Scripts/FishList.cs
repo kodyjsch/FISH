@@ -39,6 +39,8 @@ public class FishList : MonoBehaviour
 
     private MechFinder mF;
 
+    public int selectedButton;
+
     private void Start()
     {
         if(list != null)

@@ -5,10 +5,19 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject gridMenu;
+    [SerializeField] private GameObject carouselView;
+
     private GameObject caster;
+    private FishList fL;
 
     public bool isPaused = false;
     public bool dialogue = false;
+
+    private void Start()
+    {
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
+    }
 
     void Update()
     {
@@ -43,6 +52,7 @@ public class PauseMenu : MonoBehaviour
             pauseMenuUI.SetActive(false);
         }
         caster.SetActive(true);
+        fL.selectedButton = 0;
         Time.timeScale = 1f;          
         isPaused = false;
     }
@@ -53,6 +63,8 @@ public class PauseMenu : MonoBehaviour
         if(menu == true)
         {
             pauseMenuUI.SetActive(true);
+            gridMenu.SetActive(true);
+            carouselView.SetActive(false);
         }
         caster.SetActive(false);
         Time.timeScale = 0f;          
