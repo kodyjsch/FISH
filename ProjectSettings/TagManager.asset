@@ -35,6 +35,7 @@ TagManager:
   - c3
   - boss
   - mech
+  - ShopTrigger
   layers:
   - Default
   - TransparentFX

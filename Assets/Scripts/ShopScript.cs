@@ -116,7 +116,8 @@ public class ShopScript : MonoBehaviour
 
         if (butt == 4)
         {
-            fL.fishNumber = fL.fishNumber + 13;
+            fL.fishNumber = fL.fishNumber + 15;
+            fL.hat1 = true;
             butt4 = true;
             exes[butt].SetActive(true);
         }
@@ -124,6 +125,7 @@ public class ShopScript : MonoBehaviour
         if (butt == 5)
         {
             fL.fishNumber = fL.fishPrefabs.Count;
+            fL.hat2 = true;
             exes[butt].SetActive(true);            
         }
     }

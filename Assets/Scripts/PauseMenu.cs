@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject gridMenu;
     [SerializeField] private GameObject carouselView;
+    private GameObject shop;
 
     private GameObject caster;
     private FishList fL;
@@ -24,6 +25,11 @@ public class PauseMenu : MonoBehaviour
         if(caster == null)
         {
             caster = GameObject.FindWithTag("caster");
+        }
+
+        if(shop == null)
+        {
+            shop = GameObject.FindWithTag("ShopTrigger");
         }
 
 
@@ -51,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         {
             pauseMenuUI.SetActive(false);
         }
+        shop.SetActive(true);
         caster.SetActive(true);
         fL.selectedButton = 0;
         Time.timeScale = 1f;          
@@ -66,6 +73,7 @@ public class PauseMenu : MonoBehaviour
             gridMenu.SetActive(true);
             carouselView.SetActive(false);
         }
+        shop.SetActive(false);
         caster.SetActive(false);
         Time.timeScale = 0f;          
         isPaused = true;

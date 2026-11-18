@@ -41,6 +41,9 @@ public class FishList : MonoBehaviour
 
     public int selectedButton;
 
+    public bool hat1;
+    public bool hat2;
+
     private void Start()
     {
         if(list != null)
@@ -53,18 +56,19 @@ public class FishList : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        //dialogueSprite = manmer;
-        //dialogueSplash = manmerSplash;
+        dialogueSprite = manmer;
+        dialogueSplash = manmerSplash;
 
         bossDialogue = true;
 
-        //maxWait = 16;
-        //qteLength = 2f;
-        //fishNumber = 14;
+        maxWait = 16;
+        qteLength = 2f;
+        fishNumber = 14;
     }
 
     private void Update()
     {
+
         if(trigger == true)
         {
             if(day2 == false)

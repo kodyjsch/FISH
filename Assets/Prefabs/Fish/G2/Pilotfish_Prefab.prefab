@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3796a5002bbf94f880ffdef38a4848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splash: {fileID: 21300000, guid: c719c5e991d4dd042a516c1a34cc9905, type: 3}
+  splash: {fileID: 21300000, guid: 267f6c378406a0a409fb3c3dfefa628c, type: 3}
   counter: {fileID: 6040869602721056723, guid: 672c0fc66887d464bad04598c57fe249, type: 3}
   fishName: Pilotfish
   zinger: 

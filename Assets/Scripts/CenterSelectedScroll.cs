@@ -15,6 +15,9 @@ public class CenterSelectedScroll : MonoBehaviour
     private FishList fL;
     [SerializeField] private GameObject[] buttons;
 
+    private bool hatOne = false;
+    private bool hatTwo = false;
+
     void Awake()
     {
         scrollRect = GetComponent<ScrollRect>();
@@ -30,6 +33,27 @@ public class CenterSelectedScroll : MonoBehaviour
 
     void Update()
     {
+        if(fL.hat1 == true && hatOne == false)
+        {
+            for (int i = 15; i < 30; i++)
+            {
+                buttons[i].SetActive(true);
+            }
+
+            hatOne = true;
+        }
+
+        if(fL.hat2 == true && hatTwo == false)
+        {
+            for(int i = 30; i < 42; i++)
+            {
+                buttons[i].SetActive(true);
+            }
+
+            hatTwo = true;
+        }
+
+
         GameObject current = EventSystem.current.currentSelectedGameObject;
 
         // Keep track of the last valid selection so keyboard navigation never breaks
