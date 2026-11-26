@@ -12,6 +12,7 @@ public class QTESys : MonoBehaviour
 
     public PlayerFishing pF;
     public FishReturn fR;
+    private FishList fL;
     private GameObject tutorial;
     private GameObject boss;
 
@@ -39,6 +40,7 @@ public class QTESys : MonoBehaviour
     {
         pF = GameObject.Find("Caster").GetComponent<PlayerFishing>();
         fR = GameObject.FindWithTag("bobber").GetComponent<FishReturn>();
+        fL = GameObject.FindWithTag("list").GetComponent<FishList>();
         tutorial = GameObject.FindWithTag("tutorial");
         boss = GameObject.FindWithTag("boss");
         mech = GameObject.FindWithTag("mech");
@@ -64,6 +66,8 @@ public class QTESys : MonoBehaviour
         }
 
         QTENum = nums.Count;
+
+        QTE.SetFloat("Speed", fL.AnimationSpeed);
     }
 
     private void Update()

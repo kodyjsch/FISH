@@ -133,6 +133,7 @@ public class FishReturn : MonoBehaviour
         {
             splash.Play();
             inWater = true;
+            rb.velocity *= 0.05f;
 
             if (tut == null)
             {

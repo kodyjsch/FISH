@@ -14,8 +14,8 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
-    private Button[] butts;
-    private TextMeshProUGUI[] choicesText;
+    [SerializeField] private Button[] butts;
+    [SerializeField] private TextMeshProUGUI[] choicesText;
 
     private Story CurrentStory;
 
@@ -36,20 +36,12 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+
         pM = GameObject.FindWithTag("list").GetComponent<PauseMenu>();
         fL = GameObject.FindWithTag("list").GetComponent<FishList>();
         isPlaying = false;
-        DialoguePanel.SetActive(false);
 
         choicesText = new TextMeshProUGUI[choices.Length];
-        int index = 0;
-        foreach(GameObject choice in choices)
-        {
-
-            choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
-            index++;
-        }
-
     }
 
     private void Update()
@@ -64,26 +56,22 @@ public class DialogueManager : MonoBehaviour
             choices[1] = GameObject.FindWithTag("c2");
             choices[2] = GameObject.FindWithTag("c3");
 
-            int index = 0;
-            foreach (GameObject choice in choices)
+            for(int i = 0; i < choices.Length; i++)
             {
-                choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
-                index++;
+                choicesText[i] = choices[i].GetComponentInChildren<TextMeshProUGUI>();
             }
 
-            int index1 = 0;
-            foreach (GameObject choice in choices)
+            for(int j = 0; j < choices.Length; j++)
             {
-                butts[index1] = choice.GetComponent<Button>();
-                index1++;
+                butts[j] = choices[j].GetComponent<Button>();
             }
 
-            int index2 = 0;
-            foreach (Button butt in butts)
+            for(int k = 0; k < butts.Length; k++)
             {
-                butts[index2].onClick.AddListener(() => MakeChoice(index2));
-                index2++;
+                butts[k].onClick.AddListener(() => MakeChoice(k));
             }
+
+            DialoguePanel.SetActive(false);
         }
 
         if (!isPlaying)
@@ -123,6 +111,11 @@ public class DialogueManager : MonoBehaviour
         pM.dialogue = false;
 
         fL.trigger = true;
+
+        if(fL.shopTrigActive == false)
+        {
+            fL.ShopTrig(true);
+        }
     }
 
     private void ContinueStory()

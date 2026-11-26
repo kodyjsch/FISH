@@ -90,12 +90,15 @@ public class ShopScript : MonoBehaviour
         {
             exes[butt].SetActive(true);
             butt0 = true;
+            fL.AnimatorOverride(fL.V1, 1);
+            fL.rod1 = true;
             fL.maxWait = 11;
         }
 
         if(butt == 1)
         {
             exes[butt].SetActive(true);
+            fL.rod2 = true;
             fL.maxWait = 6;
         }
 
@@ -103,6 +106,7 @@ public class ShopScript : MonoBehaviour
         {
             exes[butt].SetActive(true);
             butt2 = true;
+            fL.AnimationSpeed = 2;
             fL.qteLength = 4f;
             fL.rb = fL.puffer;
         }
@@ -110,6 +114,7 @@ public class ShopScript : MonoBehaviour
         if (butt == 3)
         {
             exes[butt].SetActive(true);
+            fL.AnimationSpeed = 1;
             fL.qteLength = 6f;
             fL.rb = fL.disco;
         }

@@ -50,6 +50,7 @@ public class MenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OpenCarousel()
     {
+        arrow.SetActive(false);
         carousel.SetActive(true);
         scroll.SetActive(false);
     }

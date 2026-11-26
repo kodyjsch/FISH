@@ -32,6 +32,9 @@ public class SplashTrigger : MonoBehaviour
 
     private bool evilBug;
 
+    [SerializeField] private GameObject secondTut;
+    private bool second = false;
+
     private void Start()
     {
         fList = GameObject.Find("FISH LIST (FLIST)").GetComponent<FishList>();
@@ -97,6 +100,12 @@ public class SplashTrigger : MonoBehaviour
         }
         else if (other.CompareTag("fish") && destroy == false)
         {
+            if(second == false && fList.day2 == false)
+            {
+                second = true;
+                secondTut.SetActive(true);
+            }
+
             fList.fishCaught = fList.fishCaught + 1;
             fD = other.GetComponent<FishDetails>();
             destroy = true;

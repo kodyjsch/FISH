@@ -16,9 +16,9 @@ public class KYS : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            Destroy(gameObject);
+        {            
             DialogueManager.GetInstance().EnterDialogue(dia);
+            Destroy(gameObject);
         }
     }
 }

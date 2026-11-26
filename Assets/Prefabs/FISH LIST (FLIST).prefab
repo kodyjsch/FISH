@@ -630,7 +630,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2250878243852744264}
   m_HandleRect: {fileID: 1556315079597424036}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -774,6 +774,7 @@ RectTransform:
   - {fileID: 4439857909085541263}
   - {fileID: 3267576078957331908}
   - {fileID: 3661261377860244442}
+  - {fileID: 1744102372167186679}
   m_Father: {fileID: 1693136742658667354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1533,6 +1534,141 @@ MonoBehaviour:
   - {fileID: 5600062661057515693}
   - {fileID: 2900475101902911170}
   - {fileID: 1503483369151402454}
+--- !u!1 &5573133990133440212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1744102372167186679}
+  - component: {fileID: 1740996608541038431}
+  - component: {fileID: 5615778480084434636}
+  m_Layer: 5
+  m_Name: Return
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1744102372167186679
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573133990133440212}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6452278145043093750}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 500, y: 260}
+  m_SizeDelta: {x: 500, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1740996608541038431
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573133990133440212}
+  m_CullTransparentMesh: 1
+--- !u!114 &5615778480084434636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573133990133440212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: BACKSPACE to return to list view
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 9bbd7577073d23e418a56eab10853749, type: 2}
+  m_sharedMaterial: {fileID: -3591409019847040354, guid: 9bbd7577073d23e418a56eab10853749,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4290295678
+  m_fontColor: {r: 0.4936489, g: 0.71703166, b: 0.7207546, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5848692612355510291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,10 +2086,10 @@ MonoBehaviour:
   - {fileID: 9125909999757546219, guid: c80fd1827fe775e4ea2b237e9291fdd0, type: 3}
   - {fileID: 1880286287007939026, guid: 6af36cfa2f50aff489ce2240e66874a9, type: 3}
   firstCatch: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  maxWait: 0
-  qteLength: 0
-  fishNumber: 0
-  day2: 0
+  maxWait: 5
+  qteLength: 6
+  fishNumber: 36
+  day2: 1
   fishCaught: 0
   dialogueSprite: {fileID: 3000399781586666295, guid: 525d130b2e92ecb4d876adf868152119,
     type: 3}
@@ -1967,7 +2103,17 @@ MonoBehaviour:
     type: 3}
   trigger: 0
   bossDialogue: 0
+  trig: {fileID: 0}
+  shopTrigActive: 0
   selectedButton: 0
+  hat1: 0
+  hat2: 0
+  rod1: 0
+  rod2: 0
+  AnimationSpeed: 0
+  armsAnim: {fileID: 0}
+  V1: {fileID: 22100000, guid: 0a5e92a84f9bf0947a0fcf3b9438adfe, type: 2}
+  V2: {fileID: 0}
 --- !u!114 &7308831195737702316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2000,6 +2146,14 @@ MonoBehaviour:
   DialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   choices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  butts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  choicesText:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -2533,6 +2687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -3378,6 +3537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -3618,6 +3782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -3860,6 +4029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -4100,6 +4274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -4342,6 +4521,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -4582,6 +4766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -5276,6 +5465,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -5743,6 +5937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -5983,6 +6182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -6677,6 +6881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -6917,6 +7126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -7159,6 +7373,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -7399,6 +7618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -7641,6 +7865,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -7881,6 +8110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -8123,6 +8357,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -8363,6 +8602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -8831,6 +9075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -9072,6 +9321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -9312,6 +9566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -10006,6 +10265,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -10247,6 +10511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -10487,6 +10756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
@@ -11407,6 +11681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -11648,6 +11927,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuButton (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
       propertyPath: scroll
@@ -11888,6 +12172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MenuButton (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496183049209743577, guid: c920f7fa86fe5ff4684c679bed00b1bf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4548018940231624447, guid: c920f7fa86fe5ff4684c679bed00b1bf,
         type: 3}
