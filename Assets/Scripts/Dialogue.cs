@@ -68,7 +68,8 @@ public class DialogueManager : MonoBehaviour
 
             for(int k = 0; k < butts.Length; k++)
             {
-                butts[k].onClick.AddListener(() => MakeChoice(k));
+                int input = k;
+                butts[k].onClick.AddListener(() => MakeChoice(input));
             }
 
             DialoguePanel.SetActive(false);

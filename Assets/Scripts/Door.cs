@@ -37,16 +37,15 @@ public class Door : MonoBehaviour
         {
             if(fL.day2 == false)
             {
-                fL.day2 = true;
                 fL.fishCaught = fL.fishCaught - 5;
                 SceneManager.LoadScene("Transition");
             } else
             {
-                Destroy(shop);
+                fL.ShopTrig(false);
                 fL.dialogueSprite = fL.merman;
                 fL.dialogueSplash = fL.mermanSplash;
                 fL.fishCaught = 0;
-                Debug.Log("Transition to Boss Fight");
+                SceneManager.LoadScene("Transition");
             }            
         }
 

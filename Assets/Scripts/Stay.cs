@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class Stay : MonoBehaviour
 {
+    private static GameObject gameObj;
+
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if(gameObj == null)
+        {
+            gameObj = this.gameObject;
+            DontDestroyOnLoad(gameObject);
+        } else
+        {
+            Destroy(gameObj);
+        }
+        
     }
 
 }

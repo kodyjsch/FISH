@@ -6,18 +6,21 @@ public class KYS : MonoBehaviour
 {
     [SerializeField] private TextAsset dia;
     private GameObject tutorial;
+    private DialogueManager dM;
 
     private void Start()
     {
         tutorial = GameObject.FindWithTag("tutorial");
         Destroy(tutorial);
+
+        dM = GameObject.FindWithTag("list").GetComponent<DialogueManager>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {            
-            DialogueManager.GetInstance().EnterDialogue(dia);
+            dM.EnterDialogue(dia);
             Destroy(gameObject);
         }
     }
